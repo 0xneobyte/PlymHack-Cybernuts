@@ -107,6 +107,75 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+def generate_demo_correlations(all_events):
+    """Generate synthetic correlations between events for visualization"""
+    import random
+    from datetime import datetime
+    
+    correlations = []
+    
+    # Group events by type
+    road_events = [e for e in all_events if e.get('domain') == 'infrastructure' or 'road' in e.get('description', '').lower()]
+    
+    # Create correlations between road disruptions that are geographically close
+    if len(road_events) > 1:
+        # Sample up to 15 pairs
+        num_correlations = min(15, len(road_events) * 2)
+        
+        for i in range(num_correlations):
+            if i < len(road_events) - 1:
+                event1 = road_events[i]
+                event2 = road_events[min(i + 1, len(road_events) - 1)]
+                
+                # Calculate time difference
+                try:
+                    ts1 = pd.to_datetime(event1['timestamp'])
+                    ts2 = pd.to_datetime(event2['timestamp'])
+                    lag_hours = int((ts2 - ts1).total_seconds() / 3600)
+                except:
+                    lag_hours = random.randint(-5, 10)
+                
+                # Generate severity scores
+                flood_severity = random.uniform(0.6, 0.95)
+                traffic_severity = random.uniform(0.5, 0.9)
+                
+                # Calculate correlation scores
+                spatial_corr = random.uniform(0.3, 0.8)
+                temporal_corr = random.uniform(0.4, 0.9)
+                combined_score = spatial_corr * temporal_corr * (flood_severity + traffic_severity) / 2
+                
+                # Generate inference
+                if combined_score > 0.6 and lag_hours > 0:
+                    inference = f"HIGH: Event likely caused subsequent disruption ({abs(lag_hours)}h later)"
+                elif combined_score > 0.4:
+                    inference = "MODERATE: Possible cascading impact"
+                else:
+                    inference = "LOW: Geographic proximity, weak temporal link"
+                
+                correlation = {
+                    'flood_id': f"event_{i}",
+                    'traffic_id': f"event_{i+1}",
+                    'flood_description': event1.get('description', 'Road disruption')[:50],
+                    'flood_area': event1.get('location', 'Unknown area'),
+                    'traffic_route': event2.get('road_name', event2.get('location', 'Unknown route')),
+                    'traffic_duration': f"{random.randint(15, 90)} mins delay",
+                    'spatial_correlation': round(spatial_corr, 3),
+                    'temporal_correlation': round(temporal_corr, 3),
+                    'lag_hours': lag_hours,
+                    'flood_severity': round(flood_severity, 3),
+                    'traffic_severity': round(traffic_severity, 3),
+                    'combined_score': round(combined_score, 3),
+                    'inference': inference
+                }
+                
+                correlations.append(correlation)
+    
+    # Sort by combined score
+    correlations.sort(key=lambda x: x['combined_score'], reverse=True)
+    
+    return correlations
+
+
 @st.cache_data(ttl=180)  # Cache for 3 minutes
 def run_full_intelligence_pipeline():
     """Run complete Palantir-level intelligence analysis"""
