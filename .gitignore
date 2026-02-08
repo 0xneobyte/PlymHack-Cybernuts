@@ -1,1 +1,33 @@
-owl_engine/owl_data
+# OWL Engine data directories (generated/collected data)
+owl_engine/owl_data/
+owl_engine/owl_data/**
+owl_engine/traffic_data_collected/
+owl_engine/traffic_data_collected/**
+owl_engine/owl_extracted/
+owl_engine/owl_extracted/**
+owl_engine/intelligence_events/
+owl_engine/intelligence_events/**
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Model files
+*.pt
+*.pth
+*.onnx
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
