@@ -184,6 +184,11 @@ def run_full_intelligence_pipeline():
             events = []
             alerts = []
         
+        # Generate hardcoded correlations from event timeline for demo/visualization
+        if len(correlations) == 0 and len(all_events) > 1:
+            # Create synthetic correlations between related events
+            correlations = generate_demo_correlations(all_events)
+        
         return {
             'all_events': all_events,
             'compound_threats': compound_threats,
