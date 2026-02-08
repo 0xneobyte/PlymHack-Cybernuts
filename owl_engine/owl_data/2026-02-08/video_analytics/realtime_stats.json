@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-08T10:01:50.596840",
+  "timestamp": "2026-02-08T12:36:15.700473",
   "vehicle_count": 0,
   "person_count": 0,
-  "frames_processed": 40646,
-  "session_uptime_minutes": 332.1524213833334,
-  "hourly_vehicle_count": 52,
-  "hourly_people_count": 0,
-  "total_vehicles_today": 15602,
-  "total_people_today": 9203
+  "frames_processed": 734,
+  "session_uptime_minutes": 7.1529287,
+  "hourly_vehicle_count": 122,
+  "hourly_people_count": 10,
+  "total_vehicles_today": 122,
+  "total_people_today": 10
 }

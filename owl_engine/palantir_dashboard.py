@@ -1,5 +1,5 @@
-"""
-🦉 OWL ENGINE - Palantir Gotham-Style Intelligence Dashboard
+"""  
+OWL ENGINE - Palantir Gotham-Style Intelligence Dashboard
 Multi-domain threat detection and predictive analytics with integrated timeline
 """
 
@@ -30,7 +30,7 @@ except ImportError as e:
 
 # Page config
 st.set_page_config(
-    page_title="🦉 OWL Palantir Intelligence",
+    page_title="OWL Palantir Intelligence",
     page_icon="🦉",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -225,7 +225,7 @@ def display_palantir_header():
 
 def display_threat_board(compound_threats, alerts):
     """Main threat board - Palantir style"""
-    st.markdown("### 🚨 ACTIVE THREAT BOARD")
+    st.markdown("### ACTIVE THREAT BOARD")
     
     # Combine compound threats and alerts
     all_threats = []
@@ -263,7 +263,7 @@ def display_threat_board(compound_threats, alerts):
     all_threats.sort(key=lambda x: (severity_order.get(x['severity'], 3), -x['score']))
     
     if not all_threats:
-        st.success("✅ NO ACTIVE THREATS - All systems nominal")
+        st.success("NO ACTIVE THREATS - All systems nominal")
         return
     
     # Display threats
@@ -271,15 +271,15 @@ def display_threat_board(compound_threats, alerts):
         severity_class = f"threat-{threat['severity'].lower()}"
         
         # Create expandable threat card
-        with st.expander(f"⚠️ {threat['severity']} - {threat['title']}", expanded=(threat['severity'] in ['CRITICAL', 'HIGH'])):
+        with st.expander(f"[{threat['severity']}] {threat['title']}", expanded=(threat['severity'] in ['CRITICAL', 'HIGH'])):
             # Threat score and metadata
             col1, col2 = st.columns([3, 1])
             
             with col1:
-                st.markdown(f"**📍 Location:** {threat['location']}")
-                st.markdown(f"**🔗 Domains:** {', '.join(threat['domains'])}")
-                st.markdown(f"**📊 Confidence:** {threat['confidence']:.0%}")
-                st.markdown(f"**⏱️ Time:** {threat['timestamp'][:19]}")
+                st.markdown(f"**Location:** {threat['location']}")
+                st.markdown(f"**Domains:** {', '.join(threat['domains'])}")
+                st.markdown(f"**Confidence:** {threat['confidence']:.0%}")
+                st.markdown(f"**Time:** {threat['timestamp'][:19]}")
             
             with col2:
                 st.metric("Threat Score", f"{threat['score']:.1f}", help="Higher score = more severe threat")
@@ -291,16 +291,16 @@ def display_threat_board(compound_threats, alerts):
             
             # Add severity indicator
             if threat['severity'] == 'CRITICAL':
-                st.error("🚨 CRITICAL - Immediate action required")
+                st.error("CRITICAL - Immediate action required")
             elif threat['severity'] == 'HIGH':
-                st.warning("⚠️ HIGH - Monitor closely and prepare response")
+                st.warning("HIGH - Monitor closely and prepare response")
             elif threat['severity'] == 'MEDIUM':
-                st.info("ℹ️ MEDIUM - Continue monitoring situation")
+                st.info("MEDIUM - Continue monitoring situation")
 
 
 def display_timeline_page():
     """Timeline Analysis Page"""
-    st.title("⏱️ Unified Event Timeline")
+    st.title("Unified Event Timeline")
     st.markdown("### Chronological view of ALL traffic, flood, weather, and intelligence events")
     
     # Initialize Data Manager
@@ -311,23 +311,23 @@ def display_timeline_page():
         return
     
     # Load unified timeline
-    with st.spinner("📊 Loading timeline data from all sources..."):
+    with st.spinner("Loading timeline data from all sources..."):
         timeline = dm.create_unified_timeline()
     
     if timeline.empty:
-        st.warning("⚠️ No timeline data available. Start data collection to populate the timeline.")
-        st.info("💡 Run `python continuous_collector.py` to start collecting data")
+        st.warning("No timeline data available. Start data collection to populate the timeline.")
+        st.info("Run `python continuous_collector.py` to start collecting data")
         
         # Show what data exists
-        st.markdown("### 📁 Available Data Sources")
+        st.markdown("### Available Data Sources")
         traffic = dm.load_all_traffic_history()
         floods = dm.load_all_flood_warnings()
-        st.write(f"- Traffic records: {len(traffic)}")
-        st.write(f"- Flood warnings: {len(floods)}")
+        st.write(f"Traffic records: {len(traffic)}")
+        st.write(f"Flood warnings: {len(floods)}")
         return
     
     # Filters in columns
-    st.markdown("### 🔍 Filters")
+    st.markdown("### Filters")
     filter_col1, filter_col2, filter_col3, filter_col4 = st.columns(4)
     
     with filter_col1:
@@ -335,7 +335,7 @@ def display_timeline_page():
         min_date = timeline['timestamp'].min().date()
         max_date = timeline['timestamp'].max().date()
         date_range = st.date_input(
-            "📅 Date Range",
+            "Date Range",
             value=(min_date, max_date),
             min_value=min_date,
             max_value=max_date,
@@ -345,7 +345,7 @@ def display_timeline_page():
     with filter_col2:
         # Event type filter
         event_types = st.multiselect(
-            "📊 Event Types",
+            "Event Types",
             options=sorted(timeline['event_type'].unique()),
             default=list(timeline['event_type'].unique()),
             key="timeline_event_types"
@@ -354,7 +354,7 @@ def display_timeline_page():
     with filter_col3:
         # Domain filter
         domains = st.multiselect(
-            "🏗️ Domains",
+            "Domains",
             options=sorted(timeline['domain'].unique()),
             default=list(timeline['domain'].unique()),
             key="timeline_domains"
@@ -363,7 +363,7 @@ def display_timeline_page():
     with filter_col4:
         # Severity filter
         severity_range = st.slider(
-            "⚠️ Severity",
+            "Severity",
             min_value=1,
             max_value=5,
             value=(1, 5),
@@ -391,22 +391,22 @@ def display_timeline_page():
     col1, col2, col3, col4, col5, col6 = st.columns(6)
     
     with col1:
-        st.metric("📊 Total", len(filtered))
+        st.metric("Total Events", len(filtered))
     with col2:
-        st.metric("🚗 Traffic", len(filtered[filtered['event_type'] == 'traffic']))
+        st.metric("Traffic", len(filtered[filtered['event_type'] == 'traffic']))
     with col3:
-        st.metric("🌊 Floods", len(filtered[filtered['event_type'] == 'flood']))
+        st.metric("Floods", len(filtered[filtered['event_type'] == 'flood']))
     with col4:
-        st.metric("🌤️ Weather", len(filtered[filtered['event_type'] == 'weather']))
+        st.metric("Weather", len(filtered[filtered['event_type'] == 'weather']))
     with col5:
-        st.metric("🌫️ Air", len(filtered[filtered['event_type'] == 'air_quality']))
+        st.metric("Air Quality", len(filtered[filtered['event_type'] == 'air_quality']))
     with col6:
-        st.metric("⚠️ High Sev", len(filtered[filtered['severity'] >= 4]))
+        st.metric("High Severity", len(filtered[filtered['severity'] >= 4]))
     
     st.markdown("---")
     
     # Main timeline scatter plot
-    st.markdown("### 📈 Event Timeline")
+    st.markdown("### Event Timeline")
     
     fig_timeline = px.scatter(
         filtered,
@@ -438,7 +438,7 @@ def display_timeline_page():
     col_left, col_right = st.columns(2)
     
     with col_left:
-        st.markdown("### 📊 Hourly Distribution")
+        st.markdown("### Hourly Distribution")
         filtered_copy = filtered.copy()
         filtered_copy['hour'] = filtered_copy['timestamp'].dt.hour
         hourly = filtered_copy.groupby(['hour', 'event_type']).size().reset_index(name='count')
@@ -455,7 +455,7 @@ def display_timeline_page():
         st.plotly_chart(fig_hourly, width="stretch")
     
     with col_right:
-        st.markdown("### 🎯 By Domain")
+        st.markdown("### By Domain")
         domain_counts = filtered['domain'].value_counts().reset_index()
         domain_counts.columns = ['domain', 'count']
         
@@ -472,7 +472,7 @@ def display_timeline_page():
     # Traffic trends if available
     traffic_data = filtered[filtered['event_type'] == 'traffic']
     if not traffic_data.empty:
-        st.markdown("### 🚗 Traffic Duration Trends")
+        st.markdown("### Traffic Duration Trends")
         
         traffic_data = traffic_data.copy()
         traffic_data['duration_minutes'] = traffic_data['value'].fillna(0)
@@ -490,7 +490,7 @@ def display_timeline_page():
             st.plotly_chart(fig_traffic, width="stretch")
     
     # Correlation matrix
-    st.markdown("### 🔗 Event Co-Occurrence")
+    st.markdown("### Event Co-Occurrence")
     
     try:
         filtered_corr = filtered.copy()
@@ -516,7 +516,7 @@ def display_timeline_page():
     
     # Event table
     st.markdown("---")
-    st.markdown("### 📋 Event Details")
+    st.markdown("### Event Details")
     
     display_cols = ['timestamp', 'event_type', 'domain', 'severity', 'description', 'location', 'source']
     available_cols = [col for col in display_cols if col in filtered.columns]
@@ -537,7 +537,7 @@ def display_timeline_page():
     with col_exp1:
         csv = display_df.to_csv(index=False).encode('utf-8')
         st.download_button(
-            "📥 Download CSV",
+            "Download CSV",
             csv,
             f"timeline_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
             "text/csv"
@@ -550,7 +550,7 @@ def display_timeline_page():
         
         json_str = json.dumps(export_data.to_dict('records'), indent=2)
         st.download_button(
-            "📥 Download JSON",
+            "Download JSON",
             json_str,
             f"timeline_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
             "application/json"
@@ -559,7 +559,7 @@ def display_timeline_page():
 
 def display_domain_status(all_events):
     """Domain-by-domain status grid"""
-    st.markdown("### 📊 DOMAIN STATUS")
+    st.markdown("### DOMAIN STATUS")
     
     # Group events by domain
     domain_stats = {}
@@ -576,11 +576,11 @@ def display_domain_status(all_events):
     cols = st.columns(5)
     
     domain_config = {
-        'flood': {'icon': '🌊', 'color': '#3498db'},
-        'environmental': {'icon': '🌫️', 'color': '#9b59b6'},
-        'infrastructure': {'icon': '🏗️', 'color': '#e67e22'},
-        'social': {'icon': '📱', 'color': '#1abc9c'},
-        'traffic': {'icon': '🚗', 'color': '#e74c3c'}
+        'flood': {'icon': '', 'color': '#3498db'},
+        'environmental': {'icon': '', 'color': '#9b59b6'},
+        'infrastructure': {'icon': '', 'color': '#e67e22'},
+        'social': {'icon': '', 'color': '#1abc9c'},
+        'traffic': {'icon': '', 'color': '#e74c3c'}
     }
     
     for i, (domain, stats) in enumerate(domain_stats.items()):
@@ -661,7 +661,7 @@ def load_raw_data():
 
 def display_predictive_intelligence(predictions):
     """Predictive threat forecasting with advanced cascade analysis"""
-    st.markdown("### 🔮 PREDICTIVE INTELLIGENCE")
+    st.markdown("### PREDICTIVE INTELLIGENCE")
     
     if not predictions:
         st.info("No immediate predictions - monitoring for emerging patterns")
@@ -673,7 +673,7 @@ def display_predictive_intelligence(predictions):
     
     # Display cascade predictions prominently
     if cascade_preds:
-        st.markdown("#### 🚨 TRAFFIC CASCADE PREDICTIONS")
+        st.markdown("#### TRAFFIC CASCADE PREDICTIONS")
         st.markdown("*Advanced network effect analysis: Predicting traffic redistribution from road disruptions*")
         
         for pred in cascade_preds[:10]:
@@ -691,7 +691,7 @@ def display_predictive_intelligence(predictions):
             
             # Create detailed cascade card
             with st.expander(
-                f"⚠️ {severity_label}: {pred.get('affected_route', 'Unknown Route')} - "
+                f"[{severity_label}]: {pred.get('affected_route', 'Unknown Route')} - "
                 f"Impact in {pred.get('time_to_impact', '15-30 min')}",
                 expanded=(risk_score > 0.6)
             ):
@@ -709,24 +709,24 @@ def display_predictive_intelligence(predictions):
                 st.markdown("---")
                 
                 # Trigger and affected route
-                st.markdown("**📍 CASCADE TRIGGER:**")
-                st.info(f"🚧 {pred.get('trigger_event', 'Unknown disruption')}")
+                st.markdown("**CASCADE TRIGGER:**")
+                st.info(f"{pred.get('trigger_event', 'Unknown disruption')}")
                 st.markdown(f"*Location: {pred.get('trigger_location', 'Unknown')}*")
                 
-                st.markdown("**🎯 AFFECTED ROUTE:**")
-                st.warning(f"🛣️ {pred.get('affected_route', 'Unknown')} ({pred.get('affected_location', 'Unknown')})")
+                st.markdown("**AFFECTED ROUTE:**")
+                st.warning(f"{pred.get('affected_route', 'Unknown')} ({pred.get('affected_location', 'Unknown')})")
                 
                 # Prediction details
-                st.markdown("**🔮 PREDICTION:**")
+                st.markdown("**PREDICTION:**")
                 st.text(pred.get('prediction', 'Traffic cascade expected'))
                 
                 # Recommendation
-                st.markdown("**💡 RECOMMENDED ACTION:**")
+                st.markdown("**RECOMMENDED ACTION:**")
                 st.success(pred.get('recommendation', 'Monitor situation'))
                 
                 # Technical details
                 if pred.get('factors'):
-                    with st.expander("📊 Technical Details"):
+                    with st.expander("Technical Details"):
                         st.markdown("**Analysis Factors:**")
                         for factor in pred['factors']:
                             st.markdown(f"• {factor}")
@@ -741,10 +741,10 @@ def display_predictive_intelligence(predictions):
             prediction_types[ptype].append(pred)
         
         st.markdown("---")
-        st.markdown("#### 🎯 OTHER PREDICTIONS")
+        st.markdown("#### OTHER PREDICTIONS")
         
         for ptype, preds in prediction_types.items():
-            with st.expander(f"🎯 {ptype.replace('_', ' ').title()} ({len(preds)} predictions)", expanded=False):
+            with st.expander(f"{ptype.replace('_', ' ').title()} ({len(preds)} predictions)", expanded=False):
                 for pred in preds[:5]:
                     risk_score = pred.get('risk_score', 0)
                     risk_color = "#ff4444" if risk_score > 0.7 else "#ffaa00" if risk_score > 0.4 else "#4444ff"
@@ -755,12 +755,12 @@ def display_predictive_intelligence(predictions):
                             {pred.get('prediction', 'Unknown prediction')}
                         </div>
                         <div style='font-size: 13px; margin: 8px 0;'>
-                            📍 {pred.get('location', 'Unknown')} | 
-                            📊 Risk: {risk_score:.0%} | 
-                            🎯 Confidence: {pred.get('confidence', 0):.0%}
+                            Location: {pred.get('location', 'Unknown')} | 
+                            Risk: {risk_score:.0%} | 
+                            Confidence: {pred.get('confidence', 0):.0%}
                         </div>
                         <div style='font-size: 12px; color: #aaa; margin-top: 8px;'>
-                            💡 Recommendation: {pred.get('recommendation', 'Monitor situation')}
+                            Recommendation: {pred.get('recommendation', 'Monitor situation')}
                         </div>
                     </div>
                     """, unsafe_allow_html=True)
@@ -768,7 +768,7 @@ def display_predictive_intelligence(predictions):
 
 def display_intelligence_map(all_events, compound_threats):
     """Geographic threat visualization with all traffic routes and flood zones"""
-    st.markdown("### 🗺️ GEO-INTELLIGENCE MAP")
+    st.markdown("### GEO-INTELLIGENCE MAP")
     
     # Statistics
     traffic_events = [e for e in all_events if e.get('domain') == 'transport' and e.get('event_type') != 'road_disruption']
@@ -777,13 +777,13 @@ def display_intelligence_map(all_events, compound_threats):
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.metric("🚗 Traffic Routes", len(traffic_events))
+        st.metric("Traffic Routes", len(traffic_events))
     with col2:
-        st.metric("🚧 Road Disruptions", len(disruption_events))
+        st.metric("Road Disruptions", len(disruption_events))
     with col3:
-        st.metric("🌊 Flood Warnings", len(flood_events))
+        st.metric("Flood Warnings", len(flood_events))
     with col4:
-        st.metric("⚠️ Compound Threats", len(compound_threats))
+        st.metric("Compound Threats", len(compound_threats))
     
     # Create map centered on London
     m = folium.Map(
@@ -831,14 +831,14 @@ def display_intelligence_map(all_events, compound_threats):
                     color=color,
                     weight=2,
                     opacity=0.6 * temporal_weight,
-                    popup=f"<b>🚗 {location}</b><br>{description}"
+                    popup=f"<b>TRAFFIC: {location}</b><br>{description}"
                 ).add_to(m)
                 
                 # Origin marker
                 folium.CircleMarker(
                     location=[lat, lon],
                     radius=radius,
-                    popup=f"<b>🚗 START: {location}</b><br>{description}<br>Weight: {temporal_weight:.2f}<br>Severity: {severity}",
+                    popup=f"<b>START: {location}</b><br>{description}<br>Weight: {temporal_weight:.2f}<br>Severity: {severity}",
                     color=color,
                     fill=True,
                     fillColor=color,
@@ -849,7 +849,7 @@ def display_intelligence_map(all_events, compound_threats):
                 folium.CircleMarker(
                     location=[dest_lat, dest_lon],
                     radius=radius * 0.7,
-                    popup=f"<b>🚗 END: {location}</b><br>{description}",
+                    popup=f"<b>END: {location}</b><br>{description}",
                     color=color,
                     fill=True,
                     fillColor='#ffcc00',
@@ -862,7 +862,7 @@ def display_intelligence_map(all_events, compound_threats):
                 folium.Circle(
                     location=[lat, lon],
                     radius=1500,  # 1.5km radius flood zone
-                    popup=f"<b>🌊 FLOOD: {location}</b><br>{description}<br>Severity: {severity}<br>Weight: {temporal_weight:.2f}",
+                    popup=f"<b>FLOOD: {location}</b><br>{description}<br>Severity: {severity}<br>Weight: {temporal_weight:.2f}",
                     color=color,
                     fill=True,
                     fillColor=color,
@@ -874,7 +874,7 @@ def display_intelligence_map(all_events, compound_threats):
                 folium.CircleMarker(
                     location=[lat, lon],
                     radius=8,
-                    popup=f"<b>🌊 {location}</b><br>{description}",
+                    popup=f"<b>FLOOD: {location}</b><br>{description}",
                     color='#0044ff',
                     fill=True,
                     fillColor='#0088ff',
@@ -900,7 +900,7 @@ def display_intelligence_map(all_events, compound_threats):
                 # Warning marker for disruptions
                 folium.Marker(
                     location=[lat, lon],
-                    popup=f"<b>🚧 {category.upper()}</b><br>{location}<br>{description}<br>Severity: {severity}/5<br>Closures: {'Yes' if has_closures else 'No'}<br>Weight: {temporal_weight:.2f}",
+                    popup=f"<b>DISRUPTION: {category.upper()}</b><br>{location}<br>{description}<br>Severity: {severity}/5<br>Closures: {'Yes' if has_closures else 'No'}<br>Weight: {temporal_weight:.2f}",
                     icon=folium.Icon(
                         color='red' if has_closures else 'orange',
                         icon=icon_style,
@@ -950,7 +950,7 @@ def display_intelligence_map(all_events, compound_threats):
             folium.Circle(
                 location=[lat, lon],
                 radius=2000,
-                popup=f"<b>⚠️ COMPOUND THREAT</b><br><b>{threat.get('threat_category', 'Unknown')}</b><br>{threat.get('description', '')}<br>Severity: {threat.get('severity', 'UNKNOWN')}",
+                popup=f"<b>COMPOUND THREAT</b><br><b>{threat.get('threat_category', 'Unknown')}</b><br>{threat.get('description', '')}<br>Severity: {threat.get('severity', 'UNKNOWN')}",
                 color=severity_color,
                 fill=True,
                 fillColor=severity_color,
@@ -961,7 +961,7 @@ def display_intelligence_map(all_events, compound_threats):
             # Center warning icon
             folium.Marker(
                 location=[lat, lon],
-                popup=f"<b>⚠️ {threat.get('threat_category', 'THREAT')}</b><br>{threat.get('description', '')}",
+                popup=f"<b>THREAT: {threat.get('threat_category', 'THREAT')}</b><br>{threat.get('description', '')}",
                 icon=folium.Icon(color='red', icon='warning-sign', prefix='glyphicon')
             ).add_to(m)
     
@@ -975,21 +975,15 @@ def main():
     st.sidebar.title("🦉 OWL NAVIGATION")
     page = st.sidebar.radio(
         "Select View",
-        ["🎯 Threat Intelligence", "⏱️ Timeline Analysis", "🔮 Predictions", "🗺️ Geo-Intel", "🔗 Correlations", "📊 Analytics", "📁 Raw Data"]
+        ["Threat Intelligence", "Timeline Analysis", "Predictions", "Geo-Intel", "Correlations", "Analytics", "Raw Data"]
     )
     
     st.sidebar.markdown("---")
-    st.sidebar.markdown("### ⚙️ CONTROLS")
+    st.sidebar.markdown("### CONTROLS")
     
-    if st.sidebar.button("♻️ REFRESH DATA", ):
+    if st.sidebar.button("REFRESH DATA", ):
         st.cache_data.clear()
         st.rerun()
-    
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("### 🎯 ACTIVE LAYERS")
-    layers = ["COLLECT", "EXTRACT", "LINK", "CORRELATE", "VECTORIZE", "INFER", "ALERT", "PREDICT"]
-    for layer in layers:
-        st.sidebar.success(f"✅ {layer}")
     
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"**Last Update:**  \n{datetime.now().strftime('%H:%M:%S')}")
@@ -998,17 +992,13 @@ def main():
     display_palantir_header()
     
     # ==================== TIMELINE PAGE ====================
-    if page == "⏱️ Timeline Analysis":
+    if page == "Timeline Analysis":
         display_timeline_page()
         return
     
-    # ==================== THREAT INTELLIGENCE PAGE (ORIGINAL) ====================
-    if page != "🎯 Threat Intelligence":
-        # For other pages, keep the original layout but show message
-        st.info(f"📍 {page} view - Integration in progress")
-    
+    # ==================== RUN INTELLIGENCE PIPELINE (for all pages) ====================
     # Run intelligence pipeline
-    with st.spinner("🧠 Running multi-domain intelligence analysis..."):
+    with st.spinner("Running multi-domain intelligence analysis..."):
         intel = run_full_intelligence_pipeline()
     
     if not intel or intel is None:
@@ -1017,8 +1007,8 @@ def main():
     
     # Data availability check
     if not intel.get('all_events'):
-        st.warning("⚠️ No events loaded. Intelligence analysis requires data.")
-        st.info("💡 **To populate data:**")
+        st.warning("No events loaded. Intelligence analysis requires data.")
+        st.info("**To populate data:**")
         st.code("python owl_engine\\continuous_collector.py")
         st.markdown("This will collect traffic, flood, and environmental data every 10 minutes.")
         
@@ -1033,47 +1023,414 @@ def main():
             pass
         return
     
-    # Main threat board
-    display_threat_board(intel['compound_threats'], intel['alerts'])
-    
-    st.markdown("---")
-    
-    # Domain status grid
-    display_domain_status(intel['all_events'])
-    
-    st.markdown("---")
-    
-    # Tabs for detailed views
-    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-        "🔮 PREDICTIONS",
-        "🗺️ GEO-INTEL",
-        "🔗 CORRELATIONS",
-        "📊 ANALYTICS",
-        "🎥 ABBEY ROAD",
-        "📁 RAW DATA"
-    ])
-    
-    with tab1:
+    # ==================== PREDICTIONS PAGE ====================
+    if page == "Predictions":
         display_predictive_intelligence(intel['predictions'])
+        return
     
-    with tab2:
+    # ==================== GEO-INTEL PAGE ====================
+    if page == "Geo-Intel":
         display_intelligence_map(intel['all_events'], intel['compound_threats'])
+        
+        # Add street monitoring view
+        st.markdown("---")
+        st.markdown("### STREET MONITORING - LIVE CAMERA FEEDS")
+        
+        try:
+            from abbey_road_dashboard import display_abbey_road_analytics
+            dm_abbey = DataManager()
+            display_abbey_road_analytics(dm_abbey)
+        except ImportError as ie:
+            st.error(f"Street monitoring module not found: {ie}")
+            st.info("Make sure you're running from the owl_engine directory")
+        except Exception as e:
+            st.error(f"Error loading street monitoring: {e}")
+        
+        return
     
-    with tab3:
-        st.markdown("#### Flood-Traffic Correlations")
-        if intel['correlations']:
-            df = pd.DataFrame(intel['correlations'][:20])
-            display_df = df[[
-                'flood_description', 'traffic_route', 'combined_score',
-                'spatial_correlation', 'temporal_correlation', 'inference'
-            ]].copy()
-            display_df.columns = ['Flood', 'Route', 'Score', 'Spatial', 'Temporal', 'Assessment']
-            st.dataframe(display_df, width="stretch", height=400)
-        else:
-            st.info("No correlations detected")
+    # ==================== CORRELATIONS PAGE ====================
+    if page == "Correlations":
+        st.markdown("### Multi-Domain Correlation Engine")
+        st.markdown("*Advanced geo-temporal correlation analysis across flood, traffic, environmental, and infrastructure domains*")
+        
+        # Metrics overview
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Flood-Traffic Correlations", len(intel['correlations']))
+        with col2:
+            st.metric("Compound Threats", len(intel['compound_threats']))
+        with col3:
+            total_events = len(intel['all_events'])
+            st.metric("Total Events Analyzed", total_events)
+        with col4:
+            domains = set(e['domain'] for e in intel['all_events']) if intel['all_events'] else set()
+            st.metric("Active Domains", len(domains))
+        
+        st.markdown("---")
+        
+        # Tabs for different correlation views
+        tab1, tab2, tab3, tab4 = st.tabs([
+            "Correlation Engine", "Flood-Traffic Analysis", "Compound Threats", "Network Graph"
+        ])
+        
+        # ========== TAB 1: Correlation Engine Architecture ==========
+        with tab1:
+            st.markdown("#### Correlation Engine Architecture")
+            
+            col_left, col_right = st.columns([1, 1])
+            
+            with col_left:
+                st.markdown("""
+                **Layer 4: Geo-Temporal Correlation Engine**
+                
+                **Spatial Correlation (Jaccard Similarity):**
+                ```
+                Score = |locations_A ∩ locations_B| / |locations_A ∪ locations_B|
+                ```
+                Measures geographic overlap between events (0.0 to 1.0)
+                
+                **Temporal Correlation (Exponential Decay):**
+                ```
+                Score = exp(-λ × |Δt|)
+                where Δt = time difference in hours
+                      λ = decay rate (0.1 default)
+                ```
+                Events closer in time = higher correlation
+                
+                **Combined Score:**
+                ```
+                C = Spatial × Temporal × (Severity_A + Severity_B) / 2
+                ```
+                """)
+            
+            with col_right:
+                st.markdown("""
+                **Multi-Domain Threat Correlator**
+                
+                **Temporal Weighting:**
+                - Recent events: Higher weight in analysis
+                - Historical data: Preserved for pattern recognition
+                - Decay half-life: 24 hours
+                
+                **DBSCAN Spatial Clustering:**
+                - Groups events within 2km radius
+                - Minimum 2 events per cluster
+                - Identifies geographic hotspots
+                
+                **Compound Threat Detection:**
+                - Requires ≥2 domains involved
+                - Time window: 6 hours default
+                - Calculates aggregate threat score
+                """)
+            
+            st.markdown("---")
+            
+            # Processing statistics
+            if intel['all_events']:
+                st.markdown("#### Processing Statistics")
+                
+                stats_col1, stats_col2, stats_col3 = st.columns(3)
+                
+                with stats_col1:
+                    st.markdown("**Event Distribution by Domain**")
+                    domain_counts = {}
+                    for event in intel['all_events']:
+                        domain = event.get('domain', 'unknown')
+                        domain_counts[domain] = domain_counts.get(domain, 0) + 1
+                    
+                    domain_df = pd.DataFrame([
+                        {'Domain': k, 'Count': v} for k, v in domain_counts.items()
+                    ])
+                    fig = px.pie(domain_df, values='Count', names='Domain', 
+                                title='Events by Domain')
+                    fig.update_layout(height=300)
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                with stats_col2:
+                    st.markdown("**Temporal Distribution (24h)**")
+                    
+                    # Parse timestamps and group by hour
+                    hourly_counts = {}
+                    for event in intel['all_events']:
+                        try:
+                            ts_str = event.get('timestamp', '')
+                            if ts_str:
+                                if isinstance(ts_str, str):
+                                    ts = pd.to_datetime(ts_str)
+                                else:
+                                    ts = ts_str
+                                hour = ts.hour
+                                hourly_counts[hour] = hourly_counts.get(hour, 0) + 1
+                        except:
+                            pass
+                    
+                    if hourly_counts:
+                        hour_df = pd.DataFrame([
+                            {'Hour': k, 'Events': v} for k, v in sorted(hourly_counts.items())
+                        ])
+                        fig = px.bar(hour_df, x='Hour', y='Events', 
+                                    title='Events by Hour')
+                        fig.update_layout(height=300)
+                        st.plotly_chart(fig, use_container_width=True)
+                
+                with stats_col3:
+                    st.markdown("**Correlation Confidence**")
+                    
+                    if intel['correlations']:
+                        confidence_data = {
+                            'High (>0.7)': sum(1 for c in intel['correlations'] if c.get('combined_score', 0) > 0.7),
+                            'Medium (0.4-0.7)': sum(1 for c in intel['correlations'] if 0.4 <= c.get('combined_score', 0) <= 0.7),
+                            'Low (<0.4)': sum(1 for c in intel['correlations'] if c.get('combined_score', 0) < 0.4)
+                        }
+                        conf_df = pd.DataFrame([
+                            {'Level': k, 'Count': v} for k, v in confidence_data.items()
+                        ])
+                        fig = px.bar(conf_df, x='Level', y='Count',
+                                    title='Correlation Confidence Levels',
+                                    color='Level',
+                                    color_discrete_map={
+                                        'High (>0.7)': '#2ecc71',
+                                        'Medium (0.4-0.7)': '#f39c12',
+                                        'Low (<0.4)': '#e74c3c'
+                                    })
+                        fig.update_layout(height=300, showlegend=False)
+                        st.plotly_chart(fig, use_container_width=True)
+                    else:
+                        st.info("No correlations to analyze")
+        
+        # ========== TAB 2: Flood-Traffic Correlations ==========
+        with tab2:
+            st.markdown("#### Flood-Traffic Correlation Analysis")
+            
+            if intel['correlations']:
+                # Top correlations
+                st.markdown("**Top Correlations by Combined Score**")
+                
+                df = pd.DataFrame(intel['correlations'])
+                df_sorted = df.sort_values('combined_score', ascending=False).head(20)
+                
+                # Visualization: Scatter plot
+                fig = px.scatter(
+                    df_sorted,
+                    x='temporal_correlation',
+                    y='spatial_correlation',
+                    size='combined_score',
+                    color='combined_score',
+                    hover_data=['flood_description', 'traffic_route', 'lag_hours'],
+                    title='Spatial vs Temporal Correlation',
+                    labels={
+                        'spatial_correlation': 'Spatial Overlap (Jaccard)',
+                        'temporal_correlation': 'Temporal Proximity (Exp Decay)',
+                        'combined_score': 'Combined Score'
+                    },
+                    color_continuous_scale='RdYlGn'
+                )
+                fig.update_layout(height=400)
+                st.plotly_chart(fig, use_container_width=True)
+                
+                # Time lag analysis
+                st.markdown("**Time Lag Analysis**")
+                fig2 = px.histogram(
+                    df_sorted,
+                    x='lag_hours',
+                    title='Distribution of Time Lags (hours)',
+                    nbins=20,
+                    labels={'lag_hours': 'Time Lag (hours)', 'count': 'Frequency'}
+                )
+                fig2.add_vline(x=0, line_dash="dash", line_color="red", 
+                              annotation_text="Simultaneous")
+                fig2.update_layout(height=300)
+                st.plotly_chart(fig2, use_container_width=True)
+                
+                st.markdown("---")
+                
+                # Detailed table
+                st.markdown("**Detailed Correlation Data**")
+                display_df = df_sorted[[
+                    'flood_description', 'flood_area', 'traffic_route', 
+                    'combined_score', 'spatial_correlation', 'temporal_correlation',
+                    'lag_hours', 'inference'
+                ]].copy()
+                display_df.columns = [
+                    'Flood Event', 'Area', 'Traffic Route', 
+                    'Score', 'Spatial', 'Temporal', 'Lag (h)', 'Inference'
+                ]
+                
+                # Color code by score
+                def highlight_score(val):
+                    if isinstance(val, (int, float)):
+                        if val > 0.7:
+                            return 'background-color: #27ae60; color: white'
+                        elif val > 0.4:
+                            return 'background-color: #f39c12; color: white'
+                        else:
+                            return 'background-color: #e74c3c; color: white'
+                    return ''
+                
+                styled_df = display_df.style.applymap(highlight_score, subset=['Score'])
+                st.dataframe(styled_df, use_container_width=True, height=400)
+                
+            else:
+                st.info("""
+                **No Flood-Traffic Correlations Detected**
+                
+                Possible reasons:
+                - No active flood warnings in the system
+                - No spatial overlap between floods and traffic delays
+                - Events too far apart in time
+                
+                The correlation engine runs continuously and will detect patterns when conditions match.
+                """)
+        
+        # ========== TAB 3: Compound Threats ==========
+        with tab3:
+            st.markdown("#### Multi-Domain Compound Threats")
+            
+            if intel['compound_threats']:
+                for i, threat in enumerate(intel['compound_threats'][:10], 1):
+                    severity = threat.get('severity', 'MEDIUM')
+                    threat_score = threat.get('threat_score', 0)
+                    domains = threat.get('domains_involved', [])
+                    
+                    # Color code by severity
+                    if severity == 'CRITICAL':
+                        bg_color = '#8b0000'
+                    elif severity == 'HIGH':
+                        bg_color = '#cc6600'
+                    else:
+                        bg_color = '#cc9900'
+                    
+                    st.markdown(f"""
+                    <div style='background: {bg_color}; padding: 15px; border-radius: 8px; margin: 10px 0; color: white;'>
+                        <h4 style='margin: 0; color: white;'>{i}. {threat.get('category', 'Unknown Threat')} - {severity}</h4>
+                        <p style='margin: 5px 0;'><strong>Score:</strong> {threat_score:.2f} | <strong>Domains:</strong> {', '.join(domains)}</p>
+                        <p style='margin: 5px 0;'><strong>Location:</strong> {threat.get('location', 'Multiple areas')}</p>
+                        <p style='margin: 5px 0; font-style: italic;'>{threat.get('description', 'No description')}</p>
+                        <p style='margin: 5px 0; font-size: 12px;'><strong>Events:</strong> {threat.get('event_count', 0)} correlated events</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+            else:
+                st.info("""
+                **No Compound Threats Detected**
+                
+                The system is monitoring for multi-domain threat patterns.
+                Compound threats require:
+                - Multiple domains affected (≥2)
+                - Geographic clustering (within 2km)
+                - Temporal proximity (within 6 hours)
+                """)
+        
+        # ========== TAB 4: Network Graph ==========
+        with tab4:
+            st.markdown("#### Correlation Network Graph")
+            
+            if intel['correlations'] and len(intel['correlations']) > 0:
+                st.info("""
+                **Network Visualization**
+                
+                This shows the relationship network between correlated events:
+                - **Nodes**: Individual events (floods, traffic delays)
+                - **Edges**: Correlations (thickness = strength)
+                - **Colors**: Event types
+                """)
+                
+                # Build network data for visualization
+                import networkx as nx
+                
+                G = nx.Graph()
+                
+                # Add nodes and edges from correlations
+                for corr in intel['correlations'][:30]:  # Limit to top 30
+                    flood_id = corr.get('flood_id', 'flood')
+                    traffic_id = corr.get('traffic_id', 'traffic')
+                    score = corr.get('combined_score', 0)
+                    
+                    G.add_node(flood_id, type='flood', 
+                              label=corr.get('flood_area', 'Flood')[:20])
+                    G.add_node(traffic_id, type='traffic',
+                              label=corr.get('traffic_route', 'Traffic')[:20])
+                    G.add_edge(flood_id, traffic_id, weight=score)
+                
+                if len(G.nodes()) > 0:
+                    # Create visualization
+                    pos = nx.spring_layout(G, k=0.5, iterations=50)
+                    
+                    # Extract edge data
+                    edge_x = []
+                    edge_y = []
+                    edge_weights = []
+                    
+                    for edge in G.edges(data=True):
+                        x0, y0 = pos[edge[0]]
+                        x1, y1 = pos[edge[1]]
+                        edge_x.extend([x0, x1, None])
+                        edge_y.extend([y0, y1, None])
+                        edge_weights.append(edge[2].get('weight', 0))
+                    
+                    # Extract node data
+                    node_x = []
+                    node_y = []
+                    node_colors = []
+                    node_labels = []
+                    
+                    for node in G.nodes(data=True):
+                        x, y = pos[node[0]]
+                        node_x.append(x)
+                        node_y.append(y)
+                        node_type = node[1].get('type', 'unknown')
+                        node_colors.append('#3498db' if node_type == 'flood' else '#e74c3c')
+                        node_labels.append(node[1].get('label', 'Unknown'))
+                    
+                    # Create figure
+                    fig = go.Figure()
+                    
+                    # Add edges
+                    fig.add_trace(go.Scatter(
+                        x=edge_x, y=edge_y,
+                        mode='lines',
+                        line=dict(width=1, color='#888'),
+                        hoverinfo='none',
+                        showlegend=False
+                    ))
+                    
+                    # Add nodes
+                    fig.add_trace(go.Scatter(
+                        x=node_x, y=node_y,
+                        mode='markers+text',
+                        marker=dict(size=15, color=node_colors, line=dict(width=2, color='white')),
+                        text=node_labels,
+                        textposition="top center",
+                        hoverinfo='text',
+                        showlegend=False
+                    ))
+                    
+                    fig.update_layout(
+                        title='Event Correlation Network',
+                        showlegend=False,
+                        hovermode='closest',
+                        height=600,
+                        xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+                        yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)
+                    )
+                    
+                    st.plotly_chart(fig, use_container_width=True)
+                    
+                    st.markdown(f"""
+                    **Network Statistics:**
+                    - Nodes: {len(G.nodes())}
+                    - Correlations: {len(G.edges())}
+                    - Average connections per event: {2*len(G.edges())/len(G.nodes()):.1f}
+                    """)
+                else:
+                    st.warning("Not enough data to build network graph")
+            else:
+                st.info("No correlations available for network visualization")
+        
+        return
     
-    with tab4:
-        st.markdown("#### System Analytics")
+    # ==================== ANALYTICS PAGE ====================
+    if page == "Analytics":
+        st.markdown("### System Analytics")
         
         col1, col2, col3, col4 = st.columns(4)
         
@@ -1109,38 +1466,18 @@ def main():
             )
             fig.update_layout(height=300)
             st.plotly_chart(fig, width="stretch")
+        return
     
-    with tab5:
-        # Abbey Road Video Analytics
-        try:
-            # Try importing abbey_road_dashboard
-            import importlib.util
-            spec = importlib.util.find_spec('abbey_road_dashboard')
-            if spec is None:
-                # Try adding current directory to path
-                import os
-                current_dir = os.path.dirname(os.path.abspath(__file__))
-                if current_dir not in sys.path:
-                    sys.path.insert(0, current_dir)
-            
-            from abbey_road_dashboard import display_abbey_road_analytics
-            dm_abbey = DataManager()
-            display_abbey_road_analytics(dm_abbey)
-        except ImportError as ie:
-            st.error(f"Abbey Road dashboard module not found: {ie}")
-            st.info("Make sure you're running from the owl_engine directory: `streamlit run palantir_dashboard.py`")
-        except Exception as e:
-            st.error(f"Error loading Abbey Road analytics: {e}")
-    
-    with tab6:
-        st.markdown("#### 📁 Raw Collected Data")
+    # ==================== RAW DATA PAGE ====================
+    if page == "Raw Data":
+        st.markdown("### Raw Collected Data")
         st.info("Showing all raw data collected from API sources")
         
         # Load raw data
         raw_data = load_raw_data()
         
         # Flood Warnings
-        st.markdown("### 🌊 Flood Warnings")
+        st.markdown("### Flood Warnings")
         if raw_data['flood_warnings']:
             df_flood = pd.DataFrame(raw_data['flood_warnings'])
             st.dataframe(df_flood, width="stretch", height=300)
@@ -1151,7 +1488,7 @@ def main():
         st.markdown("---")
         
         # Traffic Data
-        st.markdown("### 🚗 Traffic Conditions")
+        st.markdown("### Traffic Conditions")
         if raw_data['traffic']:
             df_traffic = pd.DataFrame(raw_data['traffic'])
             st.dataframe(df_traffic, width="stretch", height=300)
@@ -1182,7 +1519,7 @@ def main():
         st.markdown("---")
         
         # All Events (Processed)
-        st.markdown("### 🧠 Processed Intelligence Events")
+        st.markdown("### Processed Intelligence Events")
         if intel['all_events']:
             events_list = []
             for event in intel['all_events'][:100]:  # Show first 100
@@ -1202,14 +1539,14 @@ def main():
         
         # Download buttons
         st.markdown("---")
-        st.markdown("### 📥 Export Data")
+        st.markdown("### Export Data")
         col1, col2, col3 = st.columns(3)
         
         with col1:
             if raw_data['flood_warnings']:
                 csv_flood = pd.DataFrame(raw_data['flood_warnings']).to_csv(index=False)
                 st.download_button(
-                    "⬇️ Export Flood Data (CSV)",
+                    "Export Flood Data (CSV)",
                     csv_flood,
                     "flood_warnings.csv",
                     "text/csv"
@@ -1219,7 +1556,7 @@ def main():
             if raw_data['traffic']:
                 csv_traffic = pd.DataFrame(raw_data['traffic']).to_csv(index=False)
                 st.download_button(
-                    "⬇️ Export Traffic Data (CSV)",
+                    "Export Traffic Data (CSV)",
                     csv_traffic,
                     "traffic_data.csv",
                     "text/csv"
@@ -1229,11 +1566,21 @@ def main():
             if intel['all_events']:
                 csv_events = pd.DataFrame(events_list).to_csv(index=False)
                 st.download_button(
-                    "⬇️ Export Events (CSV)",
+                    "Export Events (CSV)",
                     csv_events,
                     "intelligence_events.csv",
                     "text/csv"
                 )
+        return
+    
+    # ==================== THREAT INTELLIGENCE PAGE (DEFAULT) ====================
+    # Main threat board
+    display_threat_board(intel['compound_threats'], intel['alerts'])
+    
+    st.markdown("---")
+    
+    # Domain status grid
+    display_domain_status(intel['all_events'])
 
 
 if __name__ == "__main__":

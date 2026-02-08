@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:29:23.775564",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-29-23-792393_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:29:23.775564",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-223573",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A4020] UXBRIDGE ROAD (UB1 ,W7 ) (Ealing)",
+    "comments": "[A4020] Uxbridge Road (All directions) at the junction of Broadway - Temporary lights in place to facilitate emergency gas works. ",
+    "current_update": "Delays are possible. ",
+    "start_time": "2026-01-30T16:30:00Z",
+    "end_time": "2026-02-12T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.337988,
+        51.508761
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

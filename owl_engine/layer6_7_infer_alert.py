@@ -34,7 +34,7 @@ class BaselineModel:
         
     def learn_traffic_baselines(self, graph: EntityGraph):
         """Learn normal traffic patterns"""
-        logger.info("📊 Learning traffic baselines...")
+        logger.info("[LEARN] Learning traffic baselines...")
         
         route_durations = defaultdict(list)
         
@@ -108,7 +108,7 @@ class EventDetector:
         
         where sigmoid(x) = 1 / (1 + e^(-x))
         """
-        logger.info("🚨 Detecting flood impact events...")
+        logger.info("[DETECT] Detecting flood impact events...")
         
         events = []
         
@@ -202,7 +202,7 @@ class EventDetector:
         """Generate human-readable event message"""
         delay_pct = int(z_score * 50)  # Rough % above normal
         
-        return (f"⚠️ TRAFFIC IMPACT DETECTED (Confidence: {confidence:.0%})\n"
+        return (f"TRAFFIC IMPACT DETECTED (Confidence: {confidence:.0%})\n"
                 f"Flooding in {flood_area} is likely causing delays on {route_name}. "
                 f"Current travel time: {duration} min (~{delay_pct}% above normal). "
                 f"Consider alternative routes.")
@@ -218,7 +218,7 @@ class AlertSystem:
     
     def generate_alerts(self, min_severity: str = "MEDIUM") -> List[Dict]:
         """Generate alerts from detected events"""
-        logger.info("🔔 Generating alerts...")
+        logger.info("[ALERT] Generating alerts...")
         
         severity_order = {"LOW": 0, "MEDIUM": 1, "HIGH": 2, "CRITICAL": 3}
         min_level = severity_order.get(min_severity, 1)
@@ -255,7 +255,7 @@ class AlertSystem:
             return
         
         logger.info("\n" + "=" * 70)
-        logger.info("🚨 ACTIVE ALERTS")
+        logger.info("[ALERTS] ACTIVE ALERTS")
         logger.info("=" * 70)
         
         for alert in self.alerts:
@@ -292,15 +292,15 @@ def run_intelligence_pipeline():
     from layer3_link import build_entity_graph
     
     logger.info("=" * 70)
-    logger.info("🦉 OWL ENGINE - INTELLIGENCE PIPELINE")
+    logger.info("[OWL] OWL ENGINE - INTELLIGENCE PIPELINE")
     logger.info("=" * 70)
     
     # Layer 3: Build entity graph
-    logger.info("\n📍 Layer 3: LINK - Building entity graph...")
+    logger.info("\n[LINK] Layer 3: LINK - Building entity graph...")
     graph = build_entity_graph()
     
     # Layer 4: Find correlations
-    logger.info("\n🔗 Layer 4: CORRELATE - Finding relationships...")
+    logger.info("\n[CORRELATE] Layer 4: CORRELATE - Finding relationships...")
     corr_engine = CorrelationEngine(graph)
     correlations = corr_engine.find_flood_traffic_correlations(
         min_spatial_threshold=0.05,

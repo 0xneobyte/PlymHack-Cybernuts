@@ -1,0 +1,332 @@
+[
+  {
+    "timestamp": "2026-02-08T11:48:07.340522",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340573",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340575",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340576",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340578",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340579",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340580",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340584",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340586",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340587",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340588",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340589",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340589",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340590",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340591",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340592",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340593",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340594",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340595",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340596",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340596",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340597",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340598",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340599",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340600",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340601",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340601",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340602",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340603",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340604",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340605",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340606",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  },
+  {
+    "timestamp": "2026-02-08T11:48:07.340606",
+    "location": "London",
+    "air_quality_band": "Unknown",
+    "air_quality_index": 0,
+    "threat_type": "environmental",
+    "domain": "environmental",
+    "source": "UK_Air",
+    "source_type": "government"
+  }
+]

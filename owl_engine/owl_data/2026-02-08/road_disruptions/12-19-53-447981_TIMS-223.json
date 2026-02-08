@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:19:53.430795",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-19-53-447981_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:19:53.430795",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-223305",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A404] HIGH STREET (NW10 ) (Brent)",
+    "comments": "[A404] High Street (Both directions) between [A404] Manor Park Road and Park Parade - Temporary traffic signals in place to facilitate emergency Cadent Gas works. ",
+    "current_update": "Delays are possible. ",
+    "start_time": "2026-01-27T08:00:00Z",
+    "end_time": "2026-02-09T18:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.245277,
+        51.536124
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

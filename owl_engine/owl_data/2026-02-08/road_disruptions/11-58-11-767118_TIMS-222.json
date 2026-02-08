@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T11:58:11.750311",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-222",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/11-58-11-767118_TIMS-222.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T11:58:11.750311",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-222627",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A40] NEWGATE STREET (EC1A ,EC2V ,EC4M ) (City of London)",
+    "comments": "[A40] Newgate Street (Westbound) at the junction of Old Bailey - The road is closed westbound and temporary traffic signals for emergency gas works.",
+    "current_update": "Use an alternative route. Delays are possible on diversion.",
+    "start_time": "2026-01-23T06:30:00Z",
+    "end_time": "2026-02-13T17:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.101794,
+        51.516125
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

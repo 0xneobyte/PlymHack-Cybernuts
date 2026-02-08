@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:19:00.187197",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-19-00-196618_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:19:00.187197",
+    "road_id": "a4",
+    "road_name": "a4",
+    "disruption_id": "TIMS-223987",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A3220] WARWICK ROAD (SW10 ,SW5 ,W14 ,W8 ) (Kensington & Chelsea)",
+    "comments": "[A3220] Warwick Road (Northbound) at the junction of Nevern Square - Lane one (of three) closed to facilitate carriageway frame and  cover repair work.",
+    "current_update": "Delays are possible. ",
+    "start_time": "2026-02-06T12:29:00Z",
+    "end_time": "2026-02-10T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.197557,
+        51.491118
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

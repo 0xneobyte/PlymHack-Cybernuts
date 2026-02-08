@@ -1,0 +1,31 @@
+2026-02-08 12:29:08,851 - __main__ - INFO - [OK] Traffic collector loaded
+2026-02-08 12:29:08,894 - __main__ - INFO - [OK] Environmental monitor loaded
+2026-02-08 12:29:08,894 - RoadDisruptions - INFO - ✓ Road Disruptions Collector initialized
+2026-02-08 12:29:08,894 - __main__ - INFO - [OK] Road disruptions collector loaded
+2026-02-08 12:29:09,971 - data_collection.video_analytics - INFO - ✓ YOLO model loaded
+2026-02-08 12:29:09,986 - data_collection.video_analytics - INFO - ✓ YOLO model loaded for real-time detection
+2026-02-08 12:29:09,986 - __main__ - INFO - [OK] Abbey Road video analytics loaded
+2026-02-08 12:29:09,986 - __main__ - INFO - 
+============================================================
+2026-02-08 12:29:09,986 - __main__ - INFO - [COLLECT] Collection run at 2026-02-08 12:29:09.986579
+2026-02-08 12:29:09,986 - __main__ - INFO - ============================================================
+2026-02-08 12:29:09,986 - __main__ - INFO - [TRAFFIC] Collecting traffic data...
+2026-02-08 12:29:09,986 - TrafficBrowser - ERROR - Selenium not available - cannot setup browser
+2026-02-08 12:29:09,986 - __main__ - INFO - [OK] Collected 0 traffic routes → traffic_collection_20260208_122909.json
+2026-02-08 12:29:09,986 - __main__ - INFO - [AIR] Collecting air quality data...
+2026-02-08 12:29:22,574 - __main__ - INFO - [OK] Air quality collected → 12-29-22-573840_00ea1ace.json
+2026-02-08 12:29:22,574 - __main__ - INFO - [ROADS] Collecting road disruptions...
+2026-02-08 12:29:23,793 - RoadDisruptions - INFO - ✓ Road Disruptions: 81 incidents collected
+2026-02-08 12:29:23,793 - __main__ - INFO - [OK] Collected 81 road disruptions
+2026-02-08 12:29:23,793 - __main__ - INFO - [VIDEO] Collecting Abbey Road video analytics...
+2026-02-08 12:29:23,793 - data_collection.video_analytics - INFO - 📹 Collecting Abbey Road camera data (30s clip)...
+2026-02-08 12:29:29,092 - data_collection.video_analytics - INFO - Deleted old image: detection_20260208_122013.jpg
+2026-02-08 12:29:29,093 - data_collection.video_analytics - INFO - Processing 30-second clip (899 frames at 29.97002997002997 FPS)...
+2026-02-08 12:29:47,712 - data_collection.video_analytics - WARNING - No detections found in 899 frames
+2026-02-08 12:29:47,713 - data_collection.video_analytics - WARNING - ⚠️ Video clip processing failed, using demo mode
+2026-02-08 12:29:47,714 - data_collection.video_analytics - INFO - ✓ Fallback demo data: 133 vehicles, 41 people
+2026-02-08 12:29:47,714 - __main__ - INFO - [OK] Abbey Road analytics collected
+2026-02-08 12:29:47,714 - __main__ - INFO - ============================================================
+2026-02-08 12:29:47,714 - __main__ - INFO - [OK] Collection run complete
+2026-02-08 12:29:47,714 - __main__ - INFO - ============================================================
+

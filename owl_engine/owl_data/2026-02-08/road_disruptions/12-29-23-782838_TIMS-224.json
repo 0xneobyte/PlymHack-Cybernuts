@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:29:23.775431",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-29-23-782838_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:29:23.775431",
+    "road_id": "a1",
+    "road_name": "a1",
+    "disruption_id": "TIMS-224047",
+    "category": "Collisions",
+    "sub_category": "Vehicle collision",
+    "severity": 4,
+    "location": "[A1] ARCHWAY ROAD (N6 ) (Haringey)",
+    "comments": "[A1] Archway Road (Southbound) at the junction of Holmesdale Road - Lane one [of one] blocked by an abandoned vehicle. ",
+    "current_update": "Use caution on approach. Traffic is flowing well. ",
+    "start_time": "2026-02-08T06:48:36Z",
+    "end_time": "2026-02-08T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.144569,
+        51.576548
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

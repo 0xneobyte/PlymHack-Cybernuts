@@ -47,7 +47,7 @@ class RealtimeVideoProcessor:
         
         model_path = Path(__file__).parent / 'yolov8n.pt'
         self.model = YOLO(str(model_path))
-        logger.info("✓ YOLO model loaded")
+        logger.info("[OK] YOLO model loaded")
         
         # COCO class IDs
         self.vehicle_classes = {2: 'car', 3: 'motorcycle', 5: 'bus', 7: 'truck'}
@@ -78,7 +78,7 @@ class RealtimeVideoProcessor:
         
         # Stats file
         self.stats_file = self.data_dir / "realtime_stats.json"
-        logger.info(f"✓ Output directory: {self.frames_dir}")
+        logger.info(f"[OK] Output directory: {self.frames_dir}")
     
     def get_stream_url(self):
         """Get direct stream URL from YouTube"""
@@ -88,10 +88,10 @@ class RealtimeVideoProcessor:
             
             if result.returncode == 0:
                 stream_url = result.stdout.strip()
-                logger.info("✓ Got YouTube stream URL")
+                logger.info("[OK] Got YouTube stream URL")
                 return stream_url
             else:
-                logger.error("Failed to get YouTube stream URL")
+                logger.error("[ERROR] Failed to get YouTube stream URL")
                 return None
         except Exception as e:
             logger.error(f"Error getting stream URL: {e}")
@@ -200,8 +200,8 @@ class RealtimeVideoProcessor:
     
     def process_stream(self):
         """Main processing loop - runs 24/7"""
-        logger.info("🚀 Starting real-time video processing...")
-        logger.info("📹 Press Ctrl+C to stop")
+        logger.info("[START] Starting real-time video processing...")
+        logger.info("[INFO] Press Ctrl+C to stop")
         
         last_reconnect = datetime.now()
         reconnect_interval = timedelta(minutes=30)  # Reconnect every 30 min to refresh stream
@@ -211,7 +211,7 @@ class RealtimeVideoProcessor:
                 # Get fresh stream URL
                 stream_url = self.get_stream_url()
                 if not stream_url:
-                    logger.error("❌ Failed to get stream URL, retrying in 30 seconds...")
+                    logger.error("[RETRY] Failed to get stream URL, retrying in 30 seconds...")
                     time.sleep(30)
                     continue
                 
@@ -219,13 +219,13 @@ class RealtimeVideoProcessor:
                 cap = cv2.VideoCapture(stream_url)
                 
                 if not cap.isOpened():
-                    logger.error("❌ Could not open stream, retrying in 30 seconds...")
+                    logger.error("[RETRY] Could not open stream, retrying in 30 seconds...")
                     time.sleep(30)
                     continue
                 
-                logger.info("✓ Connected to live stream")
+                logger.info("[OK] Connected to live stream")
                 fps = cap.get(cv2.CAP_PROP_FPS) or 30
-                logger.info(f"✓ Stream FPS: {fps}")
+                logger.info(f"[OK] Stream FPS: {fps}")
                 
                 frame_skip = max(1, int(fps / 2))  # Process 2 frames per second
                 frame_count = 0
@@ -235,7 +235,7 @@ class RealtimeVideoProcessor:
                     ret, frame = cap.read()
                     
                     if not ret:
-                        logger.warning("⚠️ Frame read failed, reconnecting...")
+                        logger.warning("[WARN] Frame read failed, reconnecting...")
                         break
                     
                     frame_count += 1
@@ -257,22 +257,22 @@ class RealtimeVideoProcessor:
                         
                         # Log every 10 detections
                         if self.frames_processed % 10 == 0:
-                            logger.info(f"✓ Processed {self.frames_processed} frames | Latest: {vehicle_count}V {person_count}P | Today: {self.total_vehicles_today}V {self.total_people_today}P")
+                            logger.info(f"[OK] Processed {self.frames_processed} frames | Latest: {vehicle_count}V {person_count}P | Today: {self.total_vehicles_today}V {self.total_people_today}P")
                     
                     # Check if need to reconnect (refresh stream)
                     if datetime.now() - last_reconnect > reconnect_interval:
-                        logger.info("🔄 Reconnecting to refresh stream...")
+                        logger.info("[REFRESH] Reconnecting to refresh stream...")
                         last_reconnect = datetime.now()
                         break
                 
                 cap.release()
                 
             except KeyboardInterrupt:
-                logger.info("\n⏹️ Stopping real-time processor...")
+                logger.info("\n[STOP] Stopping real-time processor...")
                 break
             except Exception as e:
-                logger.error(f"❌ Error: {e}")
-                logger.info("Retrying in 10 seconds...")
+                logger.error(f"[ERROR] {e}")
+                logger.info("[RETRY] Retrying in 10 seconds...")
                 time.sleep(10)
 
 
@@ -280,11 +280,11 @@ if __name__ == "__main__":
     print("\n" + "="*70)
     print("🦉 OWL ENGINE - REAL-TIME 24/7 VIDEO ANALYTICS")
     print("="*70)
-    print("📹 Continuously processing Abbey Road live stream")
-    print("🤖 YOLO detection on every frame")
-    print("🚗 Counting vehicles and people in real-time")
-    print("💾 Saving latest detection frame for dashboard")
-    print("\n⌨️  Press Ctrl+C to stop\n")
+    print("Continuously processing Abbey Road live stream")
+    print("YOLO detection on every frame")
+    print("Counting vehicles and people in real-time")
+    print("Saving latest detection frame for dashboard")
+    print("\nPress Ctrl+C to stop\n")
     print("="*70 + "\n")
     
     processor = RealtimeVideoProcessor()

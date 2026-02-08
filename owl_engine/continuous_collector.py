@@ -36,33 +36,33 @@ class ContinuousCollector:
         try:
             from browser_traffic_collector import TrafficBrowserCollector
             self.traffic_collector = TrafficBrowserCollector()
-            logger.info("✅ Traffic collector loaded")
+            logger.info("[OK] Traffic collector loaded")
         except Exception as e:
-            logger.warning(f"⚠️ Traffic collector not available: {e}")
+            logger.warning(f"[WARN] Traffic collector not available: {e}")
             self.traffic_collector = None
         
         try:
             from data_collection.environmental_monitor import EnvironmentalMonitor
             self.env_monitor = EnvironmentalMonitor()
-            logger.info("✅ Environmental monitor loaded")
+            logger.info("[OK] Environmental monitor loaded")
         except Exception as e:
-            logger.warning(f"⚠️ Environmental monitor not available: {e}")
+            logger.warning(f"[WARN] Environmental monitor not available: {e}")
             self.env_monitor = None
         
         try:
             from data_collection.road_disruptions import RoadDisruptionsCollector
             self.disruptions_collector = RoadDisruptionsCollector()
-            logger.info("✅ Road disruptions collector loaded")
+            logger.info("[OK] Road disruptions collector loaded")
         except Exception as e:
-            logger.warning(f"⚠️ Road disruptions collector not available: {e}")
+            logger.warning(f"[WARN] Road disruptions collector not available: {e}")
             self.disruptions_collector = None
         
         try:
             from data_collection.video_analytics import AbbeyRoadCollector
             self.video_collector = AbbeyRoadCollector()
-            logger.info("✅ Abbey Road video analytics loaded")
+            logger.info("[OK] Abbey Road video analytics loaded")
         except Exception as e:
-            logger.warning(f"⚠️ Video analytics not available: {e}")
+            logger.warning(f"[WARN] Video analytics not available: {e}")
             self.video_collector = None
     
     def collect_traffic(self):
@@ -72,7 +72,7 @@ class ContinuousCollector:
             return
         
         try:
-            logger.info("🚗 Collecting traffic data...")
+            logger.info("[TRAFFIC] Collecting traffic data...")
             results = self.traffic_collector.collect_all_routes()
             
             # Save with timestamp
@@ -82,10 +82,10 @@ class ContinuousCollector:
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(results, f, indent=2)
             
-            logger.info(f"✅ Collected {len(results)} traffic routes → {output_file.name}")
+            logger.info(f"[OK] Collected {len(results)} traffic routes → {output_file.name}")
             
         except Exception as e:
-            logger.error(f"❌ Traffic collection failed: {e}")
+            logger.error(f"[ERROR] Traffic collection failed: {e}")
     
     def collect_weather_and_air(self):
         """Collect weather and air quality data"""
@@ -100,7 +100,7 @@ class ContinuousCollector:
             today_folder.mkdir(exist_ok=True)
             
             # Collect air quality
-            logger.info("🌫️ Collecting air quality data...")
+            logger.info("[AIR] Collecting air quality data...")
             air_quality_dir = today_folder / "air_quality"
             air_quality_dir.mkdir(exist_ok=True)
             
@@ -114,10 +114,10 @@ class ContinuousCollector:
                 with open(output_file, 'w', encoding='utf-8') as f:
                     json.dump(air_data, f, indent=2)
                 
-                logger.info(f"✅ Air quality collected → {output_file.name}")
+                logger.info(f"[OK] Air quality collected → {output_file.name}")
             
         except Exception as e:
-            logger.error(f"❌ Environmental collection failed: {e}")
+            logger.error(f"[ERROR] Environmental collection failed: {e}")
     
     def collect_road_disruptions(self):
         """Collect road disruptions from TfL"""
@@ -126,14 +126,14 @@ class ContinuousCollector:
             return
         
         try:
-            logger.info("🚧 Collecting road disruptions...")
+            logger.info("[ROADS] Collecting road disruptions...")
             disruptions = self.disruptions_collector.collect()
             
             if disruptions:
-                logger.info(f"✅ Collected {len(disruptions)} road disruptions")
+                logger.info(f"[OK] Collected {len(disruptions)} road disruptions")
             
         except Exception as e:
-            logger.error(f"❌ Road disruptions collection failed: {e}")
+            logger.error(f"[ERROR] Road disruptions collection failed: {e}")
     
     def collect_video_analytics(self):
         """Collect Abbey Road camera analytics"""
@@ -142,19 +142,19 @@ class ContinuousCollector:
             return
         
         try:
-            logger.info("📹 Collecting Abbey Road video analytics...")
+            logger.info("[VIDEO] Collecting Abbey Road video analytics...")
             data = self.video_collector.collect()
             
             if data:
-                logger.info(f"✅ Abbey Road analytics collected")
+                logger.info(f"[OK] Abbey Road analytics collected")
             
         except Exception as e:
-            logger.error(f"❌ Video analytics collection failed: {e}")
+            logger.error(f"[ERROR] Video analytics collection failed: {e}")
     
     def collect_all(self):
         """Single collection run - all sources"""
         logger.info(f"\n{'='*60}")
-        logger.info(f"🔄 Collection run at {datetime.now()}")
+        logger.info(f"[COLLECT] Collection run at {datetime.now()}")
         logger.info(f"{'='*60}")
         
         # Collect from all sources
@@ -164,7 +164,7 @@ class ContinuousCollector:
         self.collect_video_analytics()
         
         logger.info(f"{'='*60}")
-        logger.info("✅ Collection run complete")
+        logger.info("[OK] Collection run complete")
         logger.info(f"{'='*60}\n")
     
     def run_continuous(self):
@@ -175,10 +175,10 @@ class ContinuousCollector:
         print("\n" + "="*70)
         print("🦉 OWL ENGINE - CONTINUOUS DATA COLLECTION")
         print("="*70)
-        print(f"📊 Collecting every {self.interval} minutes")
-        print(f"📁 Traffic data → {self.traffic_dir}")
-        print(f"📁 Environmental data → {self.owl_data_dir}")
-        print("\n⌨️  Press Ctrl+C to stop\n")
+        print(f"Collecting every {self.interval} minutes")
+        print(f"Traffic data → {self.traffic_dir}")
+        print(f"Environmental data → {self.owl_data_dir}")
+        print("\nPress Ctrl+C to stop\n")
         print("="*70 + "\n")
         
         # Schedule the job

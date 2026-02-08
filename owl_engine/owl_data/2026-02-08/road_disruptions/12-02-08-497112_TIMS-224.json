@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:02:08.486411",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-02-08-497112_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:02:08.486411",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-224046",
+    "category": "Collisions",
+    "sub_category": "Vehicle collision",
+    "severity": 4,
+    "location": "[A407] HIGH ROAD (NW10 ) (Brent)",
+    "comments": "[A407] High Road (Both directions) at the junction of Strode Road - Road blocked due to a collision. ",
+    "current_update": "Use an alternative route. ",
+    "start_time": "2026-02-08T04:47:32Z",
+    "end_time": "2026-02-08T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.236942,
+        51.547912
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

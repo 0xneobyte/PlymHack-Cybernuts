@@ -139,11 +139,11 @@ def display_abbey_road_analytics(dm):
     """
     Display Abbey Road camera analytics with peak time analysis
     """
-    st.markdown("### ðŸŽ¥ Abbey Road Crossing Analytics")
+    st.markdown("### Abbey Road Crossing Analytics")
     st.markdown("*Real-time AI-powered traffic and crowd monitoring from famous Abbey Road zebra crossing*")
     
     # Display live video feed
-    st.markdown("#### ðŸ“¹ Live Camera Feed")
+    st.markdown("#### Live Camera Feed")
     
     # Create two columns - one for video, one for location info
     video_col, info_col = st.columns([2, 1])
@@ -168,24 +168,24 @@ def display_abbey_road_analytics(dm):
     
     with info_col:
         st.info("""
-        **ðŸ“ Location:**
+        **Location:**
         Abbey Road Crossing
-        51.5319Â°N, 0.1774Â°W
+        51.5319°N, 0.1774°W
         
-        **ðŸŽ¯ Monitoring:**
-        â€¢ Vehicle counts by direction
-        â€¢ Pedestrian crossings
-        â€¢ Traffic flow patterns
-        â€¢ Tourist activity
+        **Monitoring:**
+        • Vehicle counts by direction
+        • Pedestrian crossings
+        • Traffic flow patterns
+        • Tourist activity
         
-        **â±ï¸ Analysis:**
+        **Analysis:**
         Real-time AI detection with demo mode fallback
         """)
     
     st.markdown("---")
     
     # Real-time Detection Results - 24/7 Live Feed
-    st.markdown("#### 🤖 Real-Time 24/7 Object Detection")
+    st.markdown("#### Real-Time 24/7 Object Detection")
     
     @st.fragment(run_every=0.2)
     def render_live_feed_fragment():
@@ -199,7 +199,7 @@ def display_abbey_road_analytics(dm):
         # Auto-refresh display
         st.markdown(f"""
         <div style='background: linear-gradient(90deg, #e74c3c, #c0392b); padding: 8px; border-radius: 5px; text-align: center; color: white; font-weight: bold; margin-bottom: 10px;'>
-            🔴 LIVE • ~5 FPS Detection Stream
+            [LIVE] ~5 FPS Detection Stream
         </div>
         """, unsafe_allow_html=True)
         
@@ -209,9 +209,9 @@ def display_abbey_road_analytics(dm):
         if current_frame is not None and realtime_stats is not None:
             # LIVE FEED STATUS
             if frame_count > 1:
-                st.success("✅ **24/7 Real-Time Processor Active** - Video feed running continuously")
+                st.success("**24/7 Real-Time Processor Active** - Video feed running continuously")
             else:
-                st.warning("⚠️ **Processor Idle / Starting** - Showing static feed. Starting real-time processor...")
+                st.warning("**Processor Idle / Starting** - Showing static feed. Starting real-time processor...")
                 
             detection_col1, detection_col2 = st.columns([3, 1])
             
@@ -239,25 +239,25 @@ def display_abbey_road_analytics(dm):
                 unique_frame = np.array(pil_img)
                 
                 st.image(unique_frame, 
-                        caption=f"🔴 LIVE Detection Feed - {frame_time} | Frame {display_index + 1}/{frame_count}", 
+                        caption=f"[LIVE] Detection Feed - {frame_time} | Frame {display_index + 1}/{frame_count}", 
                         use_container_width=True)
             
             with detection_col2:
-                st.markdown("**📊 Live Stats**")
+                st.markdown("**Live Stats**")
                 
                 # Current frame stats
-                st.metric("🚗 Vehicles (Now)", realtime_stats.get('vehicle_count', 0))
-                st.metric("🚶 People (Now)", realtime_stats.get('person_count', 0))
+                st.metric("Vehicles (Now)", realtime_stats.get('vehicle_count', 0))
+                st.metric("People (Now)", realtime_stats.get('person_count', 0))
                 
                 # Session stats
                 st.markdown("---")
-                st.markdown("**📈 This Hour**")
+                st.markdown("**This Hour**")
                 st.metric("Vehicles", realtime_stats.get('hourly_vehicle_count', 0))
                 st.metric("People", realtime_stats.get('hourly_people_count', 0))
                 
                 # Total today
                 st.markdown("---")
-                st.markdown("**📅 Today Total**")
+                st.markdown("**Today Total**")
                 st.metric("Vehicles", realtime_stats.get('total_vehicles_today', 0))
                 st.metric("People", realtime_stats.get('total_people_today', 0))
                 
@@ -265,8 +265,8 @@ def display_abbey_road_analytics(dm):
                 st.markdown("---")
                 frames_processed = realtime_stats.get('frames_processed', 0)
                 uptime = realtime_stats.get('session_uptime_minutes', 0)
-                st.caption(f"⚙️ Frames: {frames_processed:,}")
-                st.caption(f"⏱️ Uptime: {uptime:.1f} min")
+                st.caption(f"Frames: {frames_processed:,}")
+                st.caption(f"Uptime: {uptime:.1f} min")
                 
                 # Timestamp
                 timestamp = realtime_stats.get('timestamp', '')
@@ -274,7 +274,7 @@ def display_abbey_road_analytics(dm):
                     try:
                         det_time = datetime.fromisoformat(timestamp)
                         time_ago = (datetime.now() - det_time).total_seconds()
-                        st.caption(f"🕐 Updated {time_ago:.0f}s ago")
+                        st.caption(f"Updated {time_ago:.0f}s ago")
                     except:
                         pass
             
@@ -292,10 +292,10 @@ def display_abbey_road_analytics(dm):
                     img_container.image(detection_frame, caption=f"Latest Detection - {frame_timestamp}", width="stretch")
                 
                 with detection_col2:
-                    st.markdown("**🔍 Detection Stats**")
+                    st.markdown("**Detection Stats**")
                     
-                    st.metric("🚗 Vehicles", detection_data['vehicle_count'])
-                    st.metric("🚶 People", detection_data['person_count'])
+                    st.metric("Vehicles", detection_data['vehicle_count'])
+                    st.metric("People", detection_data['person_count'])
                     
                     # Time since last detection
                     if detection_data['timestamp']:
@@ -303,14 +303,14 @@ def display_abbey_road_analytics(dm):
                             det_time = datetime.fromisoformat(detection_data['timestamp'])
                             time_ago = datetime.now() - det_time
                             minutes_ago = int(time_ago.total_seconds() / 60)
-                            st.caption(f"⏱️ {minutes_ago} min ago")
+                            st.caption(f"{minutes_ago} min ago")
                         except:
                             pass
                     
-                    if st.button("🔄 Refresh Detection", width="stretch"):
+                    if st.button("Refresh Detection", width="stretch"):
                         st.rerun()
                     
-                    with st.expander("📊 Detected Objects"):
+                    with st.expander("Detected Objects"):
                         objects = detection_data.get('objects', [])
                         if objects:
                             for obj in objects[:10]:  # Show first 10
@@ -320,7 +320,7 @@ def display_abbey_road_analytics(dm):
             elif detection_data is not None:
                 # Data exists but no annotated frame yet
                 st.warning("""
-                **⚠️ Detection Data Found (Demo Mode Active)**
+                **Detection Data Found (Demo Mode Active)**
                 
                 The collector is running and saving data, but no annotated frames with bounding boxes yet.
                 
@@ -339,21 +339,21 @@ def display_abbey_road_analytics(dm):
                 ```
                 
                 **What real mode does:**
-                - 📹 Captures 30 seconds of live video every 10 minutes
-                - 🔍 Processes ~30 frames in real-time
-                - ⭐ Saves best frame with most vehicle/people activity
-                - 🎨 Draws bounding boxes on detected objects
+                - Captures 30 seconds of live video every 10 minutes
+                - Processes ~30 frames in real-time
+                - Saves best frame with most vehicle/people activity
+                - Draws bounding boxes on detected objects
                 
                 **Current demo data:** {0} vehicles, {1} people detected
                 
                 *Once YouTube capture works, annotated frames will appear here!*
                 """.format(detection_data.get('vehicle_count', 0), detection_data.get('person_count', 0)))
                 
-                if st.button("🔄 Refresh to Check for Frames", width="stretch"):
+                if st.button("Refresh to Check for Frames", width="stretch"):
                     st.rerun()
             else:
                 st.info("""
-                **🎥 Real-Time Detection Not Yet Active**
+                **Real-Time Detection Not Yet Active**
                 
                 No detection data found in the database yet.
                 
@@ -364,13 +364,13 @@ def display_abbey_road_analytics(dm):
                 ```
                 
                 **How it works (continuous detection):**
-                - 📹 **Continuous 24/7 video stream** from YouTube
-                - 🔍 Processes **2 frames per second** in real-time
-                - 🤖 YOLO detects vehicles and people in **every frame**
-                - 💾 **Auto-updates** latest detection every 2 seconds
-                - 🎨 Draws bounding boxes (Green=vehicles, Blue=people)
-                - 📊 **Live counting**: vehicles and people passing through
-                - ✨ Dashboard **auto-refreshes** to show live feed
+                - **Continuous 24/7 video stream** from YouTube
+                - Processes **2 frames per second** in real-time
+                - YOLO detects vehicles and people in **every frame**
+                - **Auto-updates** latest detection every 2 seconds
+                - Draws bounding boxes (Green=vehicles, Blue=people)
+                - **Live counting**: vehicles and people passing through
+                - Dashboard **auto-refreshes** to show live feed
                 
                 **OR for periodic captures (every 10 minutes):**
                 ```bash
@@ -415,7 +415,7 @@ def display_abbey_road_analytics(dm):
         """)
         
         # Show sample data button
-        if st.button("ðŸŽ¬ Generate Sample Data Now"):
+        if st.button("Generate Sample Data Now"):
             with st.spinner("Generating realistic Abbey Road traffic data..."):
                 try:
                     from data_collection.video_analytics import AbbeyRoadCollector
@@ -425,8 +425,8 @@ def display_abbey_road_analytics(dm):
                     for i in range(5):
                         collector.collect()
                     
-                    st.success("âœ… Generated 5 sample data points!")
-                    st.info("ðŸ”„ Refresh the page to see the charts")
+                    st.success("Generated 5 sample data points!")
+                    st.info("Refresh the page to see the charts")
                 except Exception as e:
                     st.error(f"Error generating data: {e}")
         
@@ -459,10 +459,10 @@ def display_abbey_road_analytics(dm):
     
     # Create tabs for different visualizations
     tab1, tab2, tab3, tab4 = st.tabs([
-        "ðŸ“ˆ Peak Traffic Times",
-        "ðŸ‘¥ Crowd Density",
-        "ðŸ”€ Traffic Flow",
-        "ðŸ“Š Statistics"
+        "Peak Traffic Times",
+        "Crowd Density",
+        "Traffic Flow",
+        "Statistics"
     ])
     
     with tab1:
@@ -480,7 +480,7 @@ def display_abbey_road_analytics(dm):
 
 def display_peak_traffic_times(df):
     """Show peak traffic times with hourly breakdown"""
-    st.markdown("#### ðŸš¦ Peak Vehicle Traffic Times")
+    st.markdown("#### Peak Vehicle Traffic Times")
     
     if 'hour' in df.columns:
         # Hourly aggregation
@@ -544,7 +544,7 @@ def display_peak_traffic_times(df):
         
         # Find peak hour
         peak_hour = hourly_df.loc[hourly_df['total_vehicles'].idxmax()]
-        st.success(f"ðŸ”¥ **Peak Traffic**: {peak_hour['hour']} with {int(peak_hour['total_vehicles'])} vehicles")
+        st.success(f"**Peak Traffic**: {peak_hour['hour']} with {int(peak_hour['total_vehicles'])} vehicles")
         
     elif 'vehicle_count' in df.columns and 'timestamp' in df.columns:
         # Snapshot data - aggregate by hour
@@ -566,7 +566,7 @@ def display_peak_traffic_times(df):
 
 def display_crowd_density_analysis(df):
     """Show crowd density patterns"""
-    st.markdown("#### ðŸ‘¥ Pedestrian Crowd Density")
+    st.markdown("#### Pedestrian Crowd Density")
     
     if 'person_count' in df.columns and 'timestamp' in df.columns:
         df['hour'] = df['timestamp'].dt.floor('h')  # Changed from 'H' to 'h'
@@ -606,7 +606,7 @@ def display_crowd_density_analysis(df):
         
         # Peak crowd time
         peak_crowd = hourly_people.loc[hourly_people['max'].idxmax()]
-        st.warning(f"ðŸ‘¥ **Busiest Crossing Time**: {peak_crowd['hour']} with {int(peak_crowd['max'])} people")
+        st.warning(f"**Busiest Crossing Time**: {peak_crowd['hour']} with {int(peak_crowd['max'])} people")
         
     elif 'avg_crowd_density' in df.columns:
         fig = px.line(
@@ -624,7 +624,7 @@ def display_crowd_density_analysis(df):
 
 def display_traffic_flow_directions(df):
     """Show traffic flow in different directions"""
-    st.markdown("#### ðŸ”€ Traffic Flow by Direction")
+    st.markdown("#### Traffic Flow by Direction")
     
     if 'cars_north' in df.columns:
         # Calculate total by direction
@@ -654,26 +654,26 @@ def display_traffic_flow_directions(df):
         # Show breakdown
         col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.metric("â¬†ï¸ North", f"{int(direction_totals['North'])}")
+            st.metric("North", f"{int(direction_totals['North'])}")
         with col2:
-            st.metric("â¬‡ï¸ South", f"{int(direction_totals['South'])}")
+            st.metric("South", f"{int(direction_totals['South'])}")
         with col3:
-            st.metric("âž¡ï¸ East", f"{int(direction_totals['East'])}")
+            st.metric("East", f"{int(direction_totals['East'])}")
         with col4:
-            st.metric("â¬…ï¸ West", f"{int(direction_totals['West'])}")
+            st.metric("West", f"{int(direction_totals['West'])}")
     else:
         st.info("Direction-specific data not available yet")
 
 
 def display_video_statistics(df):
     """Show overall statistics and insights"""
-    st.markdown("#### ðŸ“Š Analytics Statistics")
+    st.markdown("#### Analytics Statistics")
     
     # Data quality metrics
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("**ðŸ“ˆ Data Coverage**")
+        st.markdown("**Data Coverage**")
         if 'frame_count' in df.columns:
             total_frames = df['frame_count'].sum()
             st.write(f"Total frames analyzed: **{int(total_frames):,}**")
@@ -686,7 +686,7 @@ def display_video_statistics(df):
             st.write(f"Hours of coverage: **{hours_covered:.1f}h**")
     
     with col2:
-        st.markdown("**ðŸŽ¯ Detection Summary**")
+        st.markdown("**Detection Summary**")
         if 'vehicle_count' in df.columns:
             avg_vehicles = df['vehicle_count'].mean()
             st.write(f"Avg vehicles per snapshot: **{avg_vehicles:.1f}**")
@@ -697,7 +697,7 @@ def display_video_statistics(df):
     
     # Recent data table
     if len(df) > 0:
-        st.markdown("**ðŸ“‹ Recent Detections**")
+        st.markdown("**Recent Detections**")
         recent = df.tail(10).sort_values('timestamp', ascending=False)
         
         # Select relevant columns

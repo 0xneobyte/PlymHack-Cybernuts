@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:19:53.430675",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-19-53-445152_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:19:53.430675",
+    "road_id": "a40",
+    "road_name": "a40",
+    "disruption_id": "TIMS-223898",
+    "category": "Asset issues",
+    "sub_category": "Traffic signal fault",
+    "severity": 4,
+    "location": "[A40] WESTERN AVENUE (W3 ) (Ealing)",
+    "comments": "[A40] Western Avenue (Westbound) at the junction of Alliance Road - The traffic signals have failed following an earlier collision. As a result, the eastbound filter lane, for traffic making U-turns, has been closed for safety reasons.",
+    "current_update": "Use caution on approach. There are no reported delays.",
+    "start_time": "2026-02-05T12:25:29Z",
+    "end_time": "2026-02-05T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.27319,
+        51.526073
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

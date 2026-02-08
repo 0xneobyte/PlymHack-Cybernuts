@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T12:29:23.775550",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "/Users/tharushkadinujaya/Developer/PlymHack-Cybernuts/owl_engine/owl_data/2026-02-08/road_disruptions/12-29-23-791378_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T12:29:23.775550",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-224042",
+    "category": "Collisions",
+    "sub_category": "Vehicle collision",
+    "severity": 4,
+    "location": "[A308] WOOD STREET (KT1 ) (Kingston upon Thames)",
+    "comments": "[A308] Wood Street (All approaches) at the junction of [A307] Kingsgate Road - Road is closed due to a collision. ",
+    "current_update": "Use alternative routes, there are no reported delays on diversion. ",
+    "start_time": "2026-02-08T00:41:07Z",
+    "end_time": "2026-02-08T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.304319,
+        51.412914
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

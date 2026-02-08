@@ -59,7 +59,7 @@ class OwlEngine:
     
     def __init__(self):
         """Initialize the Owl Engine with all collectors and database"""
-        logger.info("🦉 Initializing Owl Engine - COLLECT Layer")
+        logger.info("[INIT] Initializing Owl Engine - COLLECT Layer")
         
         # Initialize database
         self.db = JSONDatabase(base_path="owl_data")
@@ -80,7 +80,7 @@ class OwlEngine:
         
     def collect_all(self):
         """Run all collectors in parallel"""
-        logger.info("📡 Starting data collection cycle...")
+        logger.info("[DATA] Starting data collection cycle...")
         
         with ThreadPoolExecutor(max_workers=5) as executor:
             futures = []
@@ -105,7 +105,7 @@ class OwlEngine:
     
     def start_realtime_collection(self):
         """Start real-time collection with scheduling"""
-        logger.info("🚀 Starting real-time collection mode")
+        logger.info("[START] Starting real-time collection mode")
         
         # Schedule different collectors at different intervals
         
@@ -130,17 +130,17 @@ class OwlEngine:
                 schedule.run_pending()
                 time.sleep(30)  # Check every 30 seconds
         except KeyboardInterrupt:
-            logger.info("🛑 Owl Engine stopped by user")
+            logger.info("[STOP] Owl Engine stopped by user")
     
     def collect_once(self):
         """Run a single collection cycle (useful for testing)"""
-        logger.info("🔄 Running single collection cycle...")
+        logger.info("[RUN] Running single collection cycle...")
         self.collect_all()
         logger.info("✓ Single collection complete")
     
     def status(self):
         """Get system status and statistics"""
-        logger.info("📊 Owl Engine Status")
+        logger.info("[STATUS] Owl Engine Status")
         stats = self.db.get_statistics()
         
         for source, count in stats.items():
@@ -166,8 +166,8 @@ def main():
     ║  ✓ Layer 7: ALERT    (Live Event Awareness)                 ║
     ║  ✓ Layer 8: PREDICT  (Threat Forecasting)                   ║
     ║                                                              ║
-    ║  🔗 Multi-Domain: Floods • Traffic • Environmental          ║
-    ║                   Social • Infrastructure                    ║
+    ║  Multi-Domain: Floods • Traffic • Environmental             ║
+    ║                Social • Infrastructure                       ║
     ║                                                              ║
     ║         Philosophy: Everything Gets In, Nothing Lost         ║
     ║                                                              ║
@@ -181,11 +181,11 @@ def main():
         print(f"ERROR: Dashboard file not found at {dashboard_path}")
         sys.exit(1)
     
-    print("\n🚀 Starting OWL Palantir Intelligence Platform...")
-    print("📊 Multi-domain threat correlation...")
-    print("🧠 Machine learning pattern detection...")
-    print("🔮 Predictive threat forecasting...")
-    print("🚨 Real-time compound threat detection...\n")
+    print("\n[START] Starting OWL Palantir Intelligence Platform...")
+    print("[MULTI-DOMAIN] Multi-domain threat correlation...")
+    print("[ML] Machine learning pattern detection...")
+    print("[PREDICT] Predictive threat forecasting...")
+    print("[REALTIME] Real-time compound threat detection...\n")
     
     # Launch Streamlit dashboard
     try:
@@ -198,7 +198,7 @@ def main():
             "--server.headless=false"
         ])
     except KeyboardInterrupt:
-        print("\n\n🛑 Shutting down OWL Engine...")
+        print("\n\n[SHUTDOWN] Shutting down OWL Engine...")
     except Exception as e:
         print(f"ERROR launching dashboard: {e}")
         sys.exit(1)
