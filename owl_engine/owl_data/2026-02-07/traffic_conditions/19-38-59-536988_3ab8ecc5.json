@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:38:59.536988",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_3ab8ecc5",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-38-59-536988_3ab8ecc5.json"
+  },
+  "raw_data": {
+    "route_name": "North Circular East",
+    "origin": "Finchley, London",
+    "destination": "Ilford, London",
+    "maps_url": "https://www.google.com/maps/dir/Finchley%2C%20London/Ilford%2C%20London/",
+    "collection_timestamp": "2026-02-07T19:38:43.529812",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

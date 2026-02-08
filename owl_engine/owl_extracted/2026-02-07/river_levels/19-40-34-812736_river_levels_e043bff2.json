@@ -1,0 +1,48 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.798011",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\river_levels\\19-34-56-827295_e043bff2.json",
+    "original_data_id": "river_levels_e043bff2",
+    "extraction_quality": 0.9
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:34:56.827295",
+    "source_type": "river_levels",
+    "initial_confidence": 0.85,
+    "current_confidence": 0.85,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "river_levels_e043bff2",
+    "file_path": "owl_data\\2026-02-07\\river_levels\\19-34-56-827295_e043bff2.json"
+  },
+  "extracted_data": {
+    "original_data_id": "river_levels_e043bff2",
+    "source_type": "river_levels",
+    "extracted_timestamp": "2026-02-07T19:40:34.797466",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "Sandford-on-Thames",
+        "context": "monitoring_station"
+      },
+      {
+        "type": "asset",
+        "name": "1502TH",
+        "context": "station_id"
+      }
+    ],
+    "structured_fields": {
+      "measurement_value": 3.185,
+      "unit": "",
+      "station": "Sandford-on-Thames",
+      "station_reference": "1502TH",
+      "event_type": "river_measurement"
+    },
+    "confidence_adjustment": 0.0,
+    "uncertainty": 0.15000000000000002,
+    "normalized_timestamp": "2026-02-07T13:30:00Z",
+    "language": "en",
+    "extraction_quality": 0.9
+  }
+}

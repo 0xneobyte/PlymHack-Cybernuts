@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T07:12:32.953845",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-221",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\07-12-32-967052_TIMS-221.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T07:12:32.953845",
+    "road_id": "southern river route",
+    "road_name": "southern river route",
+    "disruption_id": "TIMS-221134",
+    "category": "Network delays",
+    "sub_category": "Heavy traffic",
+    "severity": 3,
+    "location": "[A101] ROTHERHITHE TUNNEL (E1W ,SE16 ) (Southwark,Tower Hamlets)",
+    "comments": "Rotherhithe Tunnel Closed  - [A101] Rotherhithe Tunnel (Both directions) at the junction of [B205] Rotherhithe Street - When there is congestion inside the Rotherhithe Tunnel, the Tunnel may be subject to short intermittent closures.",
+    "current_update": "Tunnel is open.",
+    "start_time": "2025-12-09T09:19:53Z",
+    "end_time": "2025-12-09T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "High",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.047712,
+        51.506201
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

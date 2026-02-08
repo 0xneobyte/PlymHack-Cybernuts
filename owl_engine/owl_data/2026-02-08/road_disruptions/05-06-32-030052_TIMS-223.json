@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T05:06:31.998308",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\05-06-32-030052_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T05:06:31.998308",
+    "road_id": "a23",
+    "road_name": "a23",
+    "disruption_id": "TIMS-223769",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A23] STREATHAM HIGH ROAD (SW16 ) (Lambeth)",
+    "comments": "[A23] Streatham High Road (Northbound) at the junction of Natal Road - The pavement is partially conned off to facilitate emergency Thames water works. ",
+    "current_update": "Delays are possible\r\n ",
+    "start_time": "2026-02-03T14:00:00Z",
+    "end_time": "2026-02-07T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.130515,
+        51.424347
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

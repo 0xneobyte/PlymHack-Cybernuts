@@ -1,0 +1,85 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.750963",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\flood_warnings\\19-33-29-920950_db982347.json",
+    "original_data_id": "flood_warnings_db982347",
+    "extraction_quality": 0.95
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:33:29.920950",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_db982347",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\19-33-29-920950_db982347.json"
+  },
+  "extracted_data": {
+    "original_data_id": "flood_warnings_db982347",
+    "source_type": "flood_warnings",
+    "extracted_timestamp": "2026-02-07T19:40:34.750963",
+    "entities_mentioned": [
+      {
+        "type": "location",
+        "name": "Lower River Colne and Frays River",
+        "context": "flood_area"
+      },
+      {
+        "type": "location",
+        "name": "Buckinghamshire",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Greater London",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Hertfordshire",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Hillingdon",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Slough",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Surrey",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Windsor and Maidenhead",
+        "context": "administrative_area"
+      },
+      {
+        "type": "infrastructure",
+        "name": "River Colne",
+        "context": "water_body"
+      }
+    ],
+    "structured_fields": {
+      "severity": "Flood alert",
+      "severity_level": 3,
+      "is_tidal": false,
+      "area_code": "062WAF28LowColne",
+      "message": "River levels remain high and may lead to flooding. \n\nFlooding is possible on 07 February 2026. \n\nLocations most affected will be low lying land and roads near rivers around Denham Colne, Willow Bank, Fountains Mill, Clisbys Bridge, West Drayton, Yiewsley, Poyle Trading Estate, Stanwell Mill, Staines Moor, Pound Mill (Wraysbury). \n\nWe are closely monitoring the situation. \n\nTake care and avoid walking, cycling or driving through flood water. \n\nThis message will be updated by 6:00PM on 07 February 2026 or as the situation changes.\n",
+      "ea_area": "Hertfordshire and North London",
+      "event_type": "flood_alert"
+    },
+    "confidence_adjustment": 0.0,
+    "uncertainty": 0.09999999999999998,
+    "normalized_timestamp": "2026-02-07T08:31:02",
+    "language": "en",
+    "extraction_quality": 0.95
+  }
+}

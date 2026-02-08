@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:38:59.541122",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_d77d02f7",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-38-59-541122_d77d02f7.json"
+  },
+  "raw_data": {
+    "route_name": "A23 South",
+    "origin": "Westminster, London",
+    "destination": "Croydon, London",
+    "maps_url": "https://www.google.com/maps/dir/Westminster%2C%20London/Croydon%2C%20London/",
+    "collection_timestamp": "2026-02-07T19:38:57.533459",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

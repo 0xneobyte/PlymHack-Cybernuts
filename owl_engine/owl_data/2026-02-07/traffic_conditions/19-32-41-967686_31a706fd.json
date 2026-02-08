@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:32:41.967686",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_31a706fd",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-32-41-967686_31a706fd.json"
+  },
+  "raw_data": {
+    "route_name": "Central to North",
+    "origin": "Trafalgar Square, London",
+    "destination": "Camden Town, London",
+    "maps_url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Camden%20Town%2C%20London/",
+    "collection_timestamp": "2026-02-07T19:32:17.962636",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

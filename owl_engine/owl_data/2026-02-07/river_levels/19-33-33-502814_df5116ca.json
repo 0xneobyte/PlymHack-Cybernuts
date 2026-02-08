@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:33:33.502814",
+    "source_type": "river_levels",
+    "initial_confidence": 0.85,
+    "current_confidence": 0.85,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "river_levels_df5116ca",
+    "file_path": "owl_data\\2026-02-07\\river_levels\\19-33-33-502814_df5116ca.json"
+  },
+  "raw_data": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/3399TH-level-stage-i-15_min-mASD/2026-02-07T13-30-00Z",
+    "dateTime": "2026-02-07T13:30:00Z",
+    "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/3399TH-level-stage-i-15_min-mASD",
+    "value": 4.711,
+    "station": "Thames at Kingston (Backup)",
+    "stationReference": "3399TH"
+  }
+}

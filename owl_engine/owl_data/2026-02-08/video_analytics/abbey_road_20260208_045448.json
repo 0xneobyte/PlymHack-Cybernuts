@@ -1,0 +1,109 @@
+{
+  "session_start": "2026-02-08T04:54:48.506282",
+  "timestamp": "2026-02-08T04:54:48.506282",
+  "hourly_stats": {
+    "hour": "2026-02-08_04:00",
+    "timestamp": "2026-02-08T04:54:48.506282",
+    "frame_count": 1,
+    "avg_crowd_density": 0,
+    "vehicle_counts": {
+      "car": {
+        "north": 0,
+        "south": 7,
+        "east": 0,
+        "west": 0
+      },
+      "bus": {
+        "north": 0,
+        "south": 0,
+        "east": 0,
+        "west": 0
+      },
+      "motorcycle": {
+        "north": 0,
+        "south": 0,
+        "east": 0,
+        "west": 0
+      }
+    }
+  },
+  "detections": [
+    {
+      "timestamp": "2026-02-08T04:54:48.506282",
+      "vehicle_count": 7,
+      "person_count": 0,
+      "objects": [
+        {
+          "class": "car",
+          "confidence": 0.6879376173019409,
+          "bbox": [
+            818,
+            455,
+            1002,
+            537
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.6126482486724854,
+          "bbox": [
+            1313,
+            267,
+            1477,
+            375
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.39976516366004944,
+          "bbox": [
+            1523,
+            231,
+            1616,
+            303
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.37796276807785034,
+          "bbox": [
+            1617,
+            213,
+            1738,
+            326
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.37232711911201477,
+          "bbox": [
+            878,
+            341,
+            947,
+            389
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.32727134227752686,
+          "bbox": [
+            815,
+            382,
+            1153,
+            571
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.3129274547100067,
+          "bbox": [
+            817,
+            418,
+            1001,
+            538
+          ]
+        }
+      ]
+    }
+  ]
+}

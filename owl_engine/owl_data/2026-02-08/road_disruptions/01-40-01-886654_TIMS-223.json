@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T01:40:01.883720",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\01-40-01-886654_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T01:40:01.883720",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-223416",
+    "category": "Planned events",
+    "sub_category": "Sporting",
+    "severity": 2,
+    "location": "RUGBY ROAD (TW1 ,TW2 ) (Richmond upon Thames)",
+    "comments": "England vs.Wales - Twickenham Stadium - Rugby Road (All approaches) at the junction of [B361] Whitton Road - England vs. Wales\r\n(Six Nations 2026)",
+    "current_update": "Use alternative routes and expect delays on diversion. Eastbound traffic is slow moving, with queues currently back to the Hospital Road roundabout. Westbound is slow moving with traffic queuing back to the London roundabout.",
+    "start_time": "2026-02-07T12:30:00Z",
+    "end_time": "2026-02-07T21:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "High",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.340812,
+        51.455945
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

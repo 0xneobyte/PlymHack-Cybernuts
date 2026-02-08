@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:38:37.024597",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_db982347",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\19-38-37-024597_db982347.json"
+  },
+  "raw_data": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/id/floods/062WAF28LowColne",
+    "description": "Lower River Colne and Frays River",
+    "eaAreaName": "Hertfordshire and North London",
+    "eaRegionName": "No longer used",
+    "floodArea": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/062WAF28LowColne",
+      "county": "Buckinghamshire, Greater London, Hertfordshire, Hillingdon, Slough, Surrey, Windsor and Maidenhead",
+      "notation": "062WAF28LowColne",
+      "polygon": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/062WAF28LowColne/polygon",
+      "riverOrSea": "River Colne"
+    },
+    "floodAreaID": "062WAF28LowColne",
+    "isTidal": false,
+    "message": "River levels remain high and may lead to flooding. \n\nFlooding is possible on 07 February 2026. \n\nLocations most affected will be low lying land and roads near rivers around Denham Colne, Willow Bank, Fountains Mill, Clisbys Bridge, West Drayton, Yiewsley, Poyle Trading Estate, Stanwell Mill, Staines Moor, Pound Mill (Wraysbury). \n\nWe are closely monitoring the situation. \n\nTake care and avoid walking, cycling or driving through flood water. \n\nThis message will be updated by 6:00PM on 07 February 2026 or as the situation changes.\n",
+    "severity": "Flood alert",
+    "severityLevel": 3,
+    "timeMessageChanged": "2026-02-07T08:31:00",
+    "timeRaised": "2026-02-07T08:31:02",
+    "timeSeverityChanged": "2026-02-04T08:08:00"
+  }
+}

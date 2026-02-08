@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T04:05:56.144292",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-221",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\04-05-56-164339_TIMS-221.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T04:05:56.144292",
+    "road_id": "inner ring",
+    "road_name": "inner ring",
+    "disruption_id": "TIMS-221374",
+    "category": "Works",
+    "sub_category": "TfL works",
+    "severity": 4,
+    "location": "[A302] BRESSENDEN PLACE (SW1E ,SW1W ) (Westminster)",
+    "comments": "[A302] Bressenden Place (Southbound) at the junction of [A302] Victoria Street - Lane closures are in place to facilitate works to the pavement. ",
+    "current_update": "Delays are possible.",
+    "start_time": "2026-01-05T08:00:00Z",
+    "end_time": "2026-06-03T05:30:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.142066,
+        51.497543
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

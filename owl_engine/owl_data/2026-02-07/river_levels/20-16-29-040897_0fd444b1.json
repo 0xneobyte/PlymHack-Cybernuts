@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T20:16:29.040897",
+    "source_type": "river_levels",
+    "initial_confidence": 0.85,
+    "current_confidence": 0.85,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "river_levels_0fd444b1",
+    "file_path": "owl_data\\2026-02-07\\river_levels\\20-16-29-040897_0fd444b1.json"
+  },
+  "raw_data": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/data/readings/1502TH-level-stage-i-15_min-mASD/2026-02-07T14-15-00Z",
+    "dateTime": "2026-02-07T14:15:00Z",
+    "measure": "http://environment.data.gov.uk/flood-monitoring/id/measures/1502TH-level-stage-i-15_min-mASD",
+    "value": 0.068,
+    "station": "Sandford-on-Thames",
+    "stationReference": "1502TH"
+  }
+}

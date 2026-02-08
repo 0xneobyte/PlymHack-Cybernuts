@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T07:12:32.953845",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-206",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\07-12-32-958936_TIMS-206.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T07:12:32.953845",
+    "road_id": "a12",
+    "road_name": "a12",
+    "disruption_id": "TIMS-206772",
+    "category": "Works",
+    "sub_category": "TfL works",
+    "severity": 3,
+    "location": "[A12] EASTERN AVENUE EAST (RM2 ,RM3 ) (Havering)",
+    "comments": "Gallows Corner Flyover Refurbishment - [A12] Eastern Avenue East (All directions) at the junction of [A12] Colchester Road - Various restrictions, to facilitate the refurbishment of Gallows Corner Flyover. Full closure of the Flyover and the roundabout including all approaches in place.",
+    "current_update": "Use an alternative route. There are, on average, 5-7 minutes of additional travel time for buses and road users on Ardleigh Green Road, Gubbins Lane, and Gooshays Drive. There are on average 2-4 minutes delays on Southend Arterial Road. There are also, on average 1-3 minutes of additional travel time for buses and road users on North Street. There will be additional delays on the westbound A13 and M11 southbound during peak periods due to traffic seeking alternative routes.",
+    "start_time": "2025-03-15T21:00:00Z",
+    "end_time": "2026-03-31T21:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "High",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        0.212921,
+        51.592491
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

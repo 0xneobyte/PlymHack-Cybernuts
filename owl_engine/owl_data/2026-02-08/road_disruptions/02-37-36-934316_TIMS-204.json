@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T02:37:36.916737",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-204",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\02-37-36-934316_TIMS-204.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T02:37:36.916737",
+    "road_id": "southern river route",
+    "road_name": "southern river route",
+    "disruption_id": "TIMS-204461",
+    "category": "Works",
+    "sub_category": "TfL works",
+    "severity": 3,
+    "location": "[A3203] LAMBETH BRIDGE (SE1 ,SW1P ) (Lambeth,Westminster)",
+    "comments": "[A3203] Lambeth Bridge (Eastbound) between [A3036] A 3036 and [A3212] Millbank - Lane restrictions are in place at either side of the bridge for junction improvement works.",
+    "current_update": "Delays are possible. ",
+    "start_time": "2025-12-05T20:45:00Z",
+    "end_time": "2026-06-15T14:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "High",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.122625,
+        51.494512
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.750963",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\flood_warnings\\19-34-45-491326_6601499f.json",
+    "original_data_id": "flood_warnings_6601499f",
+    "extraction_quality": 0.95
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:34:45.491326",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_6601499f",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\19-34-45-491326_6601499f.json"
+  },
+  "extracted_data": {
+    "original_data_id": "flood_warnings_6601499f",
+    "source_type": "flood_warnings",
+    "extracted_timestamp": "2026-02-07T19:40:34.750963",
+    "entities_mentioned": [
+      {
+        "type": "location",
+        "name": "Tidal Thames riverside from Putney Bridge to Teddington Weir",
+        "context": "flood_area"
+      },
+      {
+        "type": "location",
+        "name": "Greater London",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Hammersmith and Fulham",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Hounslow",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Richmond upon Thames",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Wandsworth",
+        "context": "administrative_area"
+      },
+      {
+        "type": "infrastructure",
+        "name": "River Thames",
+        "context": "water_body"
+      }
+    ],
+    "structured_fields": {
+      "severity": "Flood alert",
+      "severity_level": 3,
+      "is_tidal": true,
+      "area_code": "063WAT23West",
+      "message": "High tides today may lead to flooding. \nFlooding is possible from 5:00 PM to 7:00 PM on 07/02/2026. \nThe forecast high tide at Richmond is 4.60 mAOD at 6:00 PM on 07/02/2026.\n\nWe believe there is a possibility of flooding for Putney Embankment (SW15), Chiswick Mall and Strand on the Green (W4), Thames Bank at Mortlake (SW14), Ranelagh Drive (TW1), Friars Lane and Water Lane (TW9), Riverside and The Embankment at Twickenham, and the Towpath below Teddington Lock. Flooding of properties is not expected.\n\nAstronomical tide levels are falling. The river flow at Teddington Weir is 288 cubic metres per second and is rising. We anticipate the flows to rise for the next 24 hours. \nWe are closely monitoring the situation . \nTake care and avoid walking, cycling or driving through flood water . \nThis message will be updated by 8:30PM on 07 February 2026 or as the situation changes.\n\n",
+      "ea_area": "Kent, South London and East Sussex",
+      "event_type": "flood_alert"
+    },
+    "confidence_adjustment": 0.0,
+    "uncertainty": 0.09999999999999998,
+    "normalized_timestamp": "2026-02-07T09:13:21",
+    "language": "en",
+    "extraction_quality": 0.95
+  }
+}

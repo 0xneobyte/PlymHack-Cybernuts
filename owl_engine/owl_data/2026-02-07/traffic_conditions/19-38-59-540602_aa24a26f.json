@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:38:59.540602",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_aa24a26f",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-38-59-540602_aa24a26f.json"
+  },
+  "raw_data": {
+    "route_name": "A4 West",
+    "origin": "Kensington, London",
+    "destination": "Heathrow Airport",
+    "maps_url": "https://www.google.com/maps/dir/Kensington%2C%20London/Heathrow%20Airport/",
+    "collection_timestamp": "2026-02-07T19:38:55.532948",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

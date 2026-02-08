@@ -1,0 +1,55 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.812736",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\traffic_conditions\\19-32-41-969822_e31a0df9.json",
+    "original_data_id": "traffic_conditions_e31a0df9",
+    "extraction_quality": 0.5
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:32:41.969822",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_e31a0df9",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-32-41-969822_e31a0df9.json"
+  },
+  "extracted_data": {
+    "original_data_id": "traffic_conditions_e31a0df9",
+    "source_type": "traffic_conditions",
+    "extracted_timestamp": "2026-02-07T19:40:34.812736",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "Central to East",
+        "context": "traffic_route"
+      },
+      {
+        "type": "location",
+        "name": "Trafalgar Square, London",
+        "context": "origin_point"
+      },
+      {
+        "type": "location",
+        "name": "Stratford, London",
+        "context": "destination_point"
+      }
+    ],
+    "structured_fields": {
+      "route_name": "Central to East",
+      "origin": "Trafalgar Square, London",
+      "destination": "Stratford, London",
+      "status": "pending_browser_automation",
+      "duration": null,
+      "distance": null,
+      "event_type": "traffic_observation"
+    },
+    "confidence_adjustment": -0.2,
+    "uncertainty": 0.3999999999999999,
+    "normalized_timestamp": "2026-02-07T19:32:21.963232",
+    "language": "en",
+    "extraction_quality": 0.5
+  }
+}

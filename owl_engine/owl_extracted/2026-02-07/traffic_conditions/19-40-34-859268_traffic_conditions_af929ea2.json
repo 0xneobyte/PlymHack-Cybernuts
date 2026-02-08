@@ -1,0 +1,55 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.850345",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\traffic_conditions\\19-35-08-378424_af929ea2.json",
+    "original_data_id": "traffic_conditions_af929ea2",
+    "extraction_quality": 0.5
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:35:08.378424",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_af929ea2",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-35-08-378424_af929ea2.json"
+  },
+  "extracted_data": {
+    "original_data_id": "traffic_conditions_af929ea2",
+    "source_type": "traffic_conditions",
+    "extracted_timestamp": "2026-02-07T19:40:34.850345",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "A1 North",
+        "context": "traffic_route"
+      },
+      {
+        "type": "location",
+        "name": "City of London",
+        "context": "origin_point"
+      },
+      {
+        "type": "location",
+        "name": "Barnet, London",
+        "context": "destination_point"
+      }
+    ],
+    "structured_fields": {
+      "route_name": "A1 North",
+      "origin": "City of London",
+      "destination": "Barnet, London",
+      "status": "pending_browser_automation",
+      "duration": null,
+      "distance": null,
+      "event_type": "traffic_observation"
+    },
+    "confidence_adjustment": -0.2,
+    "uncertainty": 0.3999999999999999,
+    "normalized_timestamp": "2026-02-07T19:35:00.370690",
+    "language": "en",
+    "extraction_quality": 0.5
+  }
+}

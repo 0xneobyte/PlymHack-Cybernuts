@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T00:49:02.356321",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-222",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\00-49-02-373359_TIMS-222.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T00:49:02.356321",
+    "road_id": "a40",
+    "road_name": "a40",
+    "disruption_id": "TIMS-222699",
+    "category": "Works",
+    "sub_category": "TfL works",
+    "severity": 4,
+    "location": "[A501] MARYLEBONE ROAD (NW1 ,W1U ,W2 ) (Westminster)",
+    "comments": "[A501] Marylebone Road (Both directions) between Cosway Street and Balcombe Street - Various restrictions, including lane closures and side road closures, during Cycleway works.",
+    "current_update": "Delays are possible. ",
+    "start_time": "2026-01-13T20:32:00Z",
+    "end_time": "2026-06-04T04:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.163108,
+        51.521125
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

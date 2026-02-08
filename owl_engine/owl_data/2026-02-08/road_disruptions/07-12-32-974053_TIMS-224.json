@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T07:12:32.953845",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\07-12-32-974053_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T07:12:32.953845",
+    "road_id": "a4",
+    "road_name": "a4",
+    "disruption_id": "TIMS-224038",
+    "category": "Collisions",
+    "sub_category": "Vehicle collision",
+    "severity": 4,
+    "location": "[A4] GREAT WEST ROAD (TW8 ) (Hounslow)",
+    "comments": "[A4] Great West Road (Westbound) at the junction of [A3002] Boston Manor Road - Lanes partially blocked due to a Collison. ",
+    "current_update": "Traffic is flowing well. ",
+    "start_time": "2026-02-07T21:32:47Z",
+    "end_time": "2026-02-07T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.313359,
+        51.488276
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

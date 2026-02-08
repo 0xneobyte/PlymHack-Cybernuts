@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T22:41:34.815415",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-216",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-07\\road_disruptions\\22-41-34-864880_TIMS-216.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-07T22:41:34.815415",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-216328",
+    "category": "Works",
+    "sub_category": "Borough works",
+    "severity": 4,
+    "location": "[A4201] REGENT STREET (W1B ,W1F ,W1G ,W1J ,W1S ,W1W ) (Westminster)",
+    "comments": "[A4201] Regent Street (Northbound) between [A4] Piccadilly Circus and [B406] Conduit Street - Regent Street directional closure northbound only to facilitate carriageway remedial works.",
+    "current_update": "Use an alternative route. Traffic is flowing well on diversion routes. ",
+    "start_time": "2026-02-02T08:00:00Z",
+    "end_time": "2026-02-13T18:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.140674,
+        51.513173
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

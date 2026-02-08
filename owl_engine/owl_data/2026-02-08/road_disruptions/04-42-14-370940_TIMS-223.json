@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T04:42:14.335022",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\04-42-14-370940_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T04:42:14.335022",
+    "road_id": "a4",
+    "road_name": "a4",
+    "disruption_id": "TIMS-223995",
+    "category": "Works",
+    "sub_category": "Motorways works",
+    "severity": 4,
+    "location": "[A4] GREAT WEST ROAD (TW8 ) (Hounslow)",
+    "comments": "[A4] Great West Road (Eastbound) at the junction of [B455] Ealing Road - The A4 is closed eastbound on Saturday between Ealing Road and Chiswick Roundabout and westbound on Sunday between Chiswick Roundabout and Ealing Road to facilitate structural works on the M4.",
+    "current_update": "Use an alternative route. Expect delays on diversions. ",
+    "start_time": "2026-02-07T20:00:00Z",
+    "end_time": "2026-02-08T05:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.302089,
+        51.491514
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

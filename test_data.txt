@@ -1,0 +1,155 @@
+
+JSON[
+  {
+    "source_type": "air_quality_tick",
+    "location": "Battaramulla",
+    "timestamp": "2026-02-07T17:30:00+05:30",
+    "pm25": 48.7,
+    "aqi": 102,
+    "confidence": 0.94,
+    "source": "aqicn_station_battaramulla"
+  },
+  {
+    "source_type": "air_quality_tick",
+    "location": "Dehiwala",
+    "timestamp": "2026-02-07T17:45:00+05:30",
+    "pm25": 62.1,
+    "aqi": 138,
+    "confidence": 0.91,
+    "source": "aqicn_station_dehiwala"
+  },
+  {
+    "source_type": "air_quality_tick",
+    "location": "Colombo Fort",
+    "timestamp": "2026-02-07T18:00:00+05:30",
+    "pm25": 35.4,
+    "aqi": 78,
+    "confidence": 0.96,
+    "source": "aqicn_station_fort"
+  }
+]
+2. Traffic Congestion Events (Google Maps Traffic / proxy)
+JSON[
+  {
+    "source_type": "traffic_event",
+    "location": "Baseline Road, Colombo",
+    "timestamp": "2026-02-07T17:40:00+05:30",
+    "speed_kmh": 18,
+    "normal_speed_kmh": 45,
+    "congestion_level": "high",
+    "confidence": 0.82,
+    "source": "google_traffic_api"
+  },
+  {
+    "source_type": "traffic_event",
+    "location": "Galle Road, Dehiwala",
+    "timestamp": "2026-02-07T17:55:00+05:30",
+    "speed_kmh": 12,
+    "normal_speed_kmh": 50,
+    "congestion_level": "very_high",
+    "confidence": 0.85,
+    "source": "google_traffic_api"
+  }
+]
+3. Social / Citizen Sentiment Events
+JSON[
+  {
+    "source_type": "social_post",
+    "platform": "x",
+    "timestamp": "2026-02-07T17:50:00+05:30",
+    "content": "Air feels really bad in Dehiwala today, throat burning #ColomboPollution",
+    "author_handle": "@colombo_resident",
+    "confidence": 0.55,
+    "location_hint": "Dehiwala"
+  },
+  {
+    "source_type": "social_post",
+    "platform": "facebook",
+    "timestamp": "2026-02-07T18:05:00+05:30",
+    "content": "Traffic jam on Baseline Road is insane, exhaust everywhere",
+    "confidence": 0.48,
+    "location_hint": "Colombo 07"
+  }
+]
+4. User Report Events (from your reporting form)
+JSON[
+  {
+    "source_type": "user_report",
+    "timestamp": "2026-02-07T18:10:00+05:30",
+    "location": "Wellawatte",
+    "description": "Strong chemical smell near the canal, eyes watering",
+    "type": "pollution_smell",
+    "confidence": 0.40,
+    "user_id": "anon_123"
+  }
+]
+5. Health Aggregate / Proxy Event (mocked from MoH data)
+JSON{
+  "source_type": "health_aggregate",
+  "location": "Colombo District",
+  "timestamp": "2026-02-07T18:15:00+05:30",
+  "respiratory_cases_last_24h": 28,
+  "baseline_avg": 15,
+  "confidence": 0.78,
+  "source": "moh_sri_lanka_epi_proxy"
+}
+How to Use This Dataset for Testing
+
+Seed the system:
+POST each object one by one to /api/v1/events
+Or bulk POST an array to /api/v1/events/bulk
+
+Expected pipeline results (what your engine should generate after processing):
+Signals emitted:
+environment domain from air_quality_tick (high magnitude if PM2.5 > 50)
+transport domain from traffic_event (magnitude based on congestion)
+sentiment domain from social_post & user_report
+health domain from health_aggregate
+
+Hypotheses likely to appear:JSON{
+  "description": "Elevated PM2.5 in Dehiwala correlated with severe traffic congestion and multiple citizen reports of respiratory irritation",
+  "confidence": 0.79,
+  "supporting_signals_count": 5,
+  "domains": ["environment", "transport", "sentiment", "health"],
+  "key_entities": ["Dehiwala", "PM2.5", "Traffic Congestion", "Respiratory Irritation"]
+}
+
+RAG query test cases (POST to /api/v1/rag/query):JSON{ "query": "Where is the worst air pollution right now in Colombo?" }
+→ Should return something like: "Dehiwala shows highest PM2.5 (AQI 138) with strong correlations to traffic and citizen complaints."
+
+{ "query": "Is there any sign of pollution affecting health today?" }
+→ "Yes, moderate confidence link between elevated PM2.5 in southern Colombo and above-average respiratory reports."
+
+{ "query": "Which area has the best air quality currently?" }
+→ "Colombo Fort currently lowest PM2.5 (AQI ~78) with fewer negative signals."
+
+Bonus: Quick Mock Response Examples
+These are what your endpoints should return after ingesting the above data.
+GET /api/v1/hypotheses?min_confidence=0.6&limit=3
+JSON{
+  "hypotheses": [
+    {
+      "id": "hyp_test001",
+      "description": "High pollution cluster in Dehiwala linked to traffic and citizen health complaints",
+      "confidence": 0.81,
+      "timestamp": "2026-02-07T18:20:00+05:30",
+      "supporting_signals_count": 6
+    },
+    {
+      "id": "hyp_test002",
+      "description": "Moderate air quality improvement in central Colombo compared to southern suburbs",
+      "confidence": 0.72,
+      "timestamp": "2026-02-07T18:18:00+05:30",
+      "supporting_signals_count": 3
+    }
+  ]
+}
+GET /api/v1/dashboard/summary
+JSON{
+  "current_aqi_avg_colombo": 106,
+  "risk_level": "Unhealthy for Sensitive Groups",
+  "top_hotspot": "Dehiwala",
+  "last_updated": "2026-02-07T18:25:00+05:30",
+  "active_signals_count": 12
+}
+You can copy-paste these JSON objects directly into Postman / curl / your frontend fetch calls to test. This dataset is small enough to run quickly but rich enough to trigger meaningful correlations, decay, cross-domain boosts, and RAG responses.

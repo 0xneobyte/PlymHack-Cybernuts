@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T03:56:48.227950",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-222",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\03-56-48-255315_TIMS-222.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T03:56:48.227950",
+    "road_id": "a205",
+    "road_name": "a205",
+    "disruption_id": "TIMS-222704",
+    "category": "Works",
+    "sub_category": "Borough works",
+    "severity": 4,
+    "location": "[A3] BATTERSEA RISE (SW11 ,SW18 ) (Wandsworth)",
+    "comments": "[A3] Battersea Rise (Both directions) at the junction of Chivalry Road - Temporary traffic signals in operation to facilitate works.",
+    "current_update": "Traffic is flowing well. ",
+    "start_time": "2026-01-14T07:00:00Z",
+    "end_time": "2026-03-14T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.172675,
+        51.459381
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

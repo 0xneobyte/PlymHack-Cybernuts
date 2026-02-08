@@ -1,0 +1,48 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.784946",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\river_levels\\19-33-33-501298_ef58bacb.json",
+    "original_data_id": "river_levels_ef58bacb",
+    "extraction_quality": 0.9
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:33:33.501298",
+    "source_type": "river_levels",
+    "initial_confidence": 0.85,
+    "current_confidence": 0.85,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "river_levels_ef58bacb",
+    "file_path": "owl_data\\2026-02-07\\river_levels\\19-33-33-501298_ef58bacb.json"
+  },
+  "extracted_data": {
+    "original_data_id": "river_levels_ef58bacb",
+    "source_type": "river_levels",
+    "extracted_timestamp": "2026-02-07T19:40:34.784946",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "Thames Ditton Island",
+        "context": "monitoring_station"
+      },
+      {
+        "type": "asset",
+        "name": "3104TH",
+        "context": "station_id"
+      }
+    ],
+    "structured_fields": {
+      "measurement_value": 5.642,
+      "unit": "",
+      "station": "Thames Ditton Island",
+      "station_reference": "3104TH",
+      "event_type": "river_measurement"
+    },
+    "confidence_adjustment": 0.0,
+    "uncertainty": 0.15000000000000002,
+    "normalized_timestamp": "2026-02-07T13:30:00Z",
+    "language": "en",
+    "extraction_quality": 0.9
+  }
+}

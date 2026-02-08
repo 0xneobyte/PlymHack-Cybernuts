@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T01:50:14.101262",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-219",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\01-50-14-142184_TIMS-219.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T01:50:14.101262",
+    "road_id": "a205",
+    "road_name": "a205",
+    "disruption_id": "TIMS-219854",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A21] RUSHEY GREEN (SE6 ) (Lewisham)",
+    "comments": "[A21] Rushey Green (Southbound) at the junction of Davenport Road - Lane closure to facilitate SGN Footway & Carriageway works. ",
+    "current_update": "Delays are possible.",
+    "start_time": "2026-01-05T08:00:00Z",
+    "end_time": "2026-02-08T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.017042,
+        51.449967
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

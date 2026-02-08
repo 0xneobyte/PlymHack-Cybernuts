@@ -1,0 +1,37 @@
+{
+  "session_start": "2026-02-08T01:50:14.163869",
+  "timestamp": "2026-02-08T01:50:14.163869",
+  "hourly_stats": {
+    "hour": "2026-02-08_01:00",
+    "timestamp": "2026-02-08T01:50:14.163869",
+    "frame_count": 120,
+    "avg_crowd_density": 2,
+    "vehicle_counts": {
+      "car": {
+        "north": 11,
+        "south": 10,
+        "east": 6,
+        "west": 5
+      },
+      "bus": {
+        "north": 6,
+        "south": 5,
+        "east": 1,
+        "west": 3
+      },
+      "motorcycle": {
+        "north": 4,
+        "south": 3,
+        "east": 1,
+        "west": 1
+      }
+    }
+  },
+  "detections": [
+    {
+      "timestamp": "2026-02-08T01:50:14.163869",
+      "vehicle_count": 56,
+      "person_count": 2
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T04:08:29.111298",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\04-08-29-132585_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T04:08:29.111298",
+    "road_id": "a12",
+    "road_name": "a12",
+    "disruption_id": "TIMS-224039",
+    "category": "Breakdowns",
+    "sub_category": "Vehicle breakdown",
+    "severity": 4,
+    "location": "[A406] CHARLIE BROWNS ROUNDABOUT (E18 ) (Redbridge)",
+    "comments": "[A406] Charlie Browns Roundabout (Westbound) at the junction of [A406] Southend Road - Lane one (of three) on the roundabout is blocked due to a broken down vehicle. ",
+    "current_update": "Approach with caution, traffic is flowing well.  ",
+    "start_time": "2026-02-07T21:58:10Z",
+    "end_time": "2026-02-07T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        0.036057,
+        51.593706
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:33:29.927144",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_c6b7b4e6",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\19-33-29-927144_c6b7b4e6.json"
+  },
+  "raw_data": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/id/floods/051WAFEF7C",
+    "description": "The Mardyke to the River Thames at Purfleet-on-Thames",
+    "eaAreaName": "East Anglia",
+    "eaRegionName": "No longer used",
+    "floodArea": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/051WAFEF7C",
+      "county": "Essex, Greater London, Havering, Thurrock",
+      "notation": "051WAFEF7C",
+      "polygon": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/051WAFEF7C/polygon",
+      "riverOrSea": "Mardyke"
+    },
+    "floodAreaID": "051WAFEF7C",
+    "isTidal": false,
+    "message": "High river levels today may lead to flooding. \nFlooding is possible on 07 February 2026 . \nRiver levels are rising in places following the recent rainfall. Areas most at risk are low lying roads and riverside areas along the River Mardyke between North Stifford and Purfleet-on-Thames. \nWe are monitoring rainfall and river levels . Further rainfall is forecast so river levels may remain high. \nTake care and avoid walking, cycling or driving through flood water . \nThis message will be updated by 10:00AM on 08 February 2026 or as the situation changes.\n",
+    "severity": "Flood alert",
+    "severityLevel": 3,
+    "timeMessageChanged": "2026-02-07T09:59:00",
+    "timeRaised": "2026-02-07T09:59:16",
+    "timeSeverityChanged": "2026-02-06T17:19:00"
+  }
+}

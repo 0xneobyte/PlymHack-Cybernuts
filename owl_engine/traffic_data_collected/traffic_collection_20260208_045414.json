@@ -1,0 +1,122 @@
+[
+  {
+    "route_name": "Central to North",
+    "origin": "Trafalgar Square, London",
+    "destination": "Camden Town, London",
+    "url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Camden%20Town%2C%20London/",
+    "timestamp": "2026-02-08T04:52:52.361589",
+    "status": "collected",
+    "duration": "19 min",
+    "page_title": "Trafalgar Square to Camden Town, London, UK - Google Maps"
+  },
+  {
+    "route_name": "Central to South",
+    "origin": "Trafalgar Square, London",
+    "destination": "Clapham Common, London",
+    "url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Clapham%20Common%2C%20London/",
+    "timestamp": "2026-02-08T04:52:59.794104",
+    "status": "collected",
+    "duration": "19 min",
+    "page_title": "Trafalgar Square to Clapham Common - Google Maps"
+  },
+  {
+    "route_name": "Central to East",
+    "origin": "Trafalgar Square, London",
+    "destination": "Stratford, London",
+    "url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Stratford%2C%20London/",
+    "timestamp": "2026-02-08T04:53:06.993168",
+    "status": "collected",
+    "duration": "38 min",
+    "page_title": "Trafalgar Square to Stratford, London, UK - Google Maps"
+  },
+  {
+    "route_name": "Central to West",
+    "origin": "Trafalgar Square, London",
+    "destination": "Hammersmith, London",
+    "url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Hammersmith%2C%20London/",
+    "timestamp": "2026-02-08T04:53:14.257169",
+    "status": "collected",
+    "duration": "24 min",
+    "page_title": "Trafalgar Square to Hammersmith, London, UK - Google Maps"
+  },
+  {
+    "route_name": "North Circular East",
+    "origin": "Finchley, London",
+    "destination": "Ilford, London",
+    "url": "https://www.google.com/maps/dir/Finchley%2C%20London/Ilford%2C%20London/",
+    "timestamp": "2026-02-08T04:53:21.491952",
+    "status": "collected",
+    "duration": "30 min",
+    "page_title": "Finchley, London, UK to Ilford, United Kingdom - Google Maps"
+  },
+  {
+    "route_name": "North Circular West",
+    "origin": "Chiswick, London",
+    "destination": "Wembley, London",
+    "url": "https://www.google.com/maps/dir/Chiswick%2C%20London/Wembley%2C%20London/",
+    "timestamp": "2026-02-08T04:53:28.720751",
+    "status": "collected",
+    "duration": "20 min",
+    "page_title": "Chiswick, London, UK to Wembley, United Kingdom - Google Maps"
+  },
+  {
+    "route_name": "South Circular East",
+    "origin": "Woolwich, London",
+    "destination": "Clapham, London",
+    "url": "https://www.google.com/maps/dir/Woolwich%2C%20London/Clapham%2C%20London/",
+    "timestamp": "2026-02-08T04:53:35.953378",
+    "status": "collected",
+    "duration": "42 min",
+    "page_title": "Woolwich, London, UK to Clapham, London, UK - Google Maps"
+  },
+  {
+    "route_name": "South Circular West",
+    "origin": "Kew, London",
+    "destination": "Dulwich, London",
+    "url": "https://www.google.com/maps/dir/Kew%2C%20London/Dulwich%2C%20London/",
+    "timestamp": "2026-02-08T04:53:43.187596",
+    "status": "collected",
+    "duration": "43 min",
+    "page_title": "Kew, Richmond, UK to Dulwich, London, UK - Google Maps"
+  },
+  {
+    "route_name": "A1 North",
+    "origin": "City of London",
+    "destination": "Barnet, London",
+    "url": "https://www.google.com/maps/dir/City%20of%20London/Barnet%2C%20London/",
+    "timestamp": "2026-02-08T04:53:50.430995",
+    "status": "collected",
+    "duration": "51 min",
+    "page_title": "City of London, London, UK to Barnet, UK - Google Maps"
+  },
+  {
+    "route_name": "A2 Southeast",
+    "origin": "City of London",
+    "destination": "Greenwich, London",
+    "url": "https://www.google.com/maps/dir/City%20of%20London/Greenwich%2C%20London/",
+    "timestamp": "2026-02-08T04:53:57.687485",
+    "status": "collected",
+    "duration": "23 min",
+    "page_title": "City of London, London, UK to Greenwich, London, UK - Google Maps"
+  },
+  {
+    "route_name": "A4 West",
+    "origin": "Kensington, London",
+    "destination": "Heathrow Airport",
+    "url": "https://www.google.com/maps/dir/Kensington%2C%20London/Heathrow%20Airport/",
+    "timestamp": "2026-02-08T04:54:04.936210",
+    "status": "collected",
+    "duration": "25 min",
+    "page_title": "Kensington, London, UK to Heathrow Airport, Hounslow, United Kingdom - Google Maps"
+  },
+  {
+    "route_name": "A23 South",
+    "origin": "Westminster, London",
+    "destination": "Croydon, London",
+    "url": "https://www.google.com/maps/dir/Westminster%2C%20London/Croydon%2C%20London/",
+    "timestamp": "2026-02-08T04:54:12.195350",
+    "status": "collected",
+    "duration": "36 min",
+    "page_title": "Westminster, London, UK to Croydon, United Kingdom - Google Maps"
+  }
+]

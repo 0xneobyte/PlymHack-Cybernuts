@@ -1,0 +1,70 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.752615",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\flood_warnings\\19-38-37-024597_3b20060f.json",
+    "original_data_id": "flood_warnings_3b20060f",
+    "extraction_quality": 0.95
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:38:37.024597",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_3b20060f",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\19-38-37-024597_3b20060f.json"
+  },
+  "extracted_data": {
+    "original_data_id": "flood_warnings_3b20060f",
+    "source_type": "flood_warnings",
+    "extracted_timestamp": "2026-02-07T19:40:34.752615",
+    "entities_mentioned": [
+      {
+        "type": "location",
+        "name": "River Thames from Hampton and Thames Ditton to Teddington",
+        "context": "flood_area"
+      },
+      {
+        "type": "location",
+        "name": "Greater London",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Kingston upon Thames",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Richmond upon Thames",
+        "context": "administrative_area"
+      },
+      {
+        "type": "location",
+        "name": "Surrey",
+        "context": "administrative_area"
+      },
+      {
+        "type": "infrastructure",
+        "name": "River Thames",
+        "context": "water_body"
+      }
+    ],
+    "structured_fields": {
+      "severity": "Flood alert",
+      "severity_level": 3,
+      "is_tidal": false,
+      "area_code": "061WAF23Hampton",
+      "message": "High tides combined with high river flows from upstream may lead to flooding.\n\nThe next high tide is expected at Kingston at 18:30 on 07/02/2026 and is forecast to reach between 5.08m - 5.22m. The following high tide is expected at 06:30 on 08/02/2026 and is forecast to reach between 5.00m - 5.14m. The forecast is for rain today and overnight. We expect river levels to remain high over the next few days, although we expect tidal peaks to reduce after today.\n\nWe are closely monitoring the situation.\n\nTake care and avoid walking, cycling or driving through flood water. Avoid low lying roads near rivers, which may be flooded.\n\nThis message will be updated by 20:00 07/02/2026 or as the situation changes.\n",
+      "ea_area": "Thames",
+      "event_type": "flood_alert"
+    },
+    "confidence_adjustment": 0.0,
+    "uncertainty": 0.09999999999999998,
+    "normalized_timestamp": "2026-02-07T09:28:46",
+    "language": "en",
+    "extraction_quality": 0.95
+  }
+}

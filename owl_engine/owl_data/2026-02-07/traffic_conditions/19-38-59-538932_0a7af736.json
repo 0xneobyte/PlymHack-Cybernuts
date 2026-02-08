@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:38:59.538932",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_0a7af736",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-38-59-538932_0a7af736.json"
+  },
+  "raw_data": {
+    "route_name": "South Circular West",
+    "origin": "Kew, London",
+    "destination": "Dulwich, London",
+    "maps_url": "https://www.google.com/maps/dir/Kew%2C%20London/Dulwich%2C%20London/",
+    "collection_timestamp": "2026-02-07T19:38:49.531510",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

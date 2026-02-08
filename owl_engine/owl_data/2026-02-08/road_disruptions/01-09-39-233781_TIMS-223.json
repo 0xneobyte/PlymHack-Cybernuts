@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T01:09:39.208843",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\01-09-39-233781_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T01:09:39.208843",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-223414",
+    "category": "Planned events",
+    "sub_category": "Sporting",
+    "severity": 4,
+    "location": "[A103] HORNSEY ROAD (N7 ) (Islington)",
+    "comments": "Arsenal vs. Sunderland - Emirates Stadium  - [A103] Hornsey Road (All approaches) at the junction of Benwell Road - Arsenal vs. Sunderland. 15.00 kick off. ",
+    "current_update": "Use an alternative route. There are no reported delays.",
+    "start_time": "2026-02-07T12:00:00Z",
+    "end_time": "2026-02-07T20:30:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.109669,
+        51.554566
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T02:32:18.000116",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\02-32-18-016115_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T02:32:18.000116",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-223724",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 3,
+    "location": "[A4020] UXBRIDGE ROAD (W13 ,W5 ) (Ealing)",
+    "comments": "[A4020] Uxbridge Road (All directions) at the junction of [A4020] Broadway - Temporary traffic signals in use for emergency Cadent Gas Works.",
+    "current_update": "Traffic is flowing well. ",
+    "start_time": "2026-02-02T22:18:00Z",
+    "end_time": "2026-02-07T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "High",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.319161,
+        51.510959
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

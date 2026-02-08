@@ -1,0 +1,55 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.817258",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\traffic_conditions\\19-33-51-388178_9eb15403.json",
+    "original_data_id": "traffic_conditions_9eb15403",
+    "extraction_quality": 0.5
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:33:51.388178",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_9eb15403",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-33-51-388178_9eb15403.json"
+  },
+  "extracted_data": {
+    "original_data_id": "traffic_conditions_9eb15403",
+    "source_type": "traffic_conditions",
+    "extracted_timestamp": "2026-02-07T19:40:34.817258",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "A23 South",
+        "context": "traffic_route"
+      },
+      {
+        "type": "location",
+        "name": "Westminster, London",
+        "context": "origin_point"
+      },
+      {
+        "type": "location",
+        "name": "Croydon, London",
+        "context": "destination_point"
+      }
+    ],
+    "structured_fields": {
+      "route_name": "A23 South",
+      "origin": "Westminster, London",
+      "destination": "Croydon, London",
+      "status": "pending_browser_automation",
+      "duration": null,
+      "distance": null,
+      "event_type": "traffic_observation"
+    },
+    "confidence_adjustment": -0.2,
+    "uncertainty": 0.3999999999999999,
+    "normalized_timestamp": "2026-02-07T19:33:49.379433",
+    "language": "en",
+    "extraction_quality": 0.5
+  }
+}

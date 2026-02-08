@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T02:15:28.844918",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\02-15-28-896608_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T02:15:28.844918",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-224035",
+    "category": "Collisions",
+    "sub_category": "Vehicle collision",
+    "severity": 4,
+    "location": "LODGE LANE (CR0 ) (Croydon)",
+    "comments": "Lodge Lane (Northbound) at the junction of Field Way - The Southbound is open following the earlier closure owing to a collision, Northbound remains blocked. ",
+    "current_update": "Use alternative routes and expect delays on diversion.",
+    "start_time": "2026-02-07T19:11:53Z",
+    "end_time": "2026-02-07T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.025964,
+        51.352947
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

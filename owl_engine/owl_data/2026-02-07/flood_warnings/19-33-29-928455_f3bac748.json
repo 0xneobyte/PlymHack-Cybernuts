@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:33:29.928455",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_f3bac748",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\19-33-29-928455_f3bac748.json"
+  },
+  "raw_data": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/id/floods/062WAB55BeamRom",
+    "description": "Rivers Beam and Rom",
+    "eaAreaName": "Hertfordshire and North London",
+    "eaRegionName": "No longer used",
+    "floodArea": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/062WAB55BeamRom",
+      "county": "Barking and Dagenham, Essex, Greater London, Havering",
+      "notation": "062WAB55BeamRom",
+      "polygon": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/062WAB55BeamRom/polygon",
+      "riverOrSea": "Beam, Rom"
+    },
+    "floodAreaID": "062WAB55BeamRom",
+    "isTidal": false,
+    "message": "High river levels today may lead to flooding. \n\nFlooding is possible on 07 February 2026. \n\nLocations most affected will be low lying land and roads near rivers, especially in the Romford area. \n\nWe are closely monitoring the situation. \n\nTake care and avoid walking, cycling or driving through flood water. \n\nThis message will be updated by 6:00PM on 07 February 2026 or as the situation changes.\n",
+    "severity": "Flood alert",
+    "severityLevel": 3,
+    "timeMessageChanged": "2026-02-07T08:34:00",
+    "timeRaised": "2026-02-07T08:34:30",
+    "timeSeverityChanged": "2026-02-06T07:57:00"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.811223",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\traffic_conditions\\19-24-31-756592_48ffe56a.json",
+    "original_data_id": "traffic_conditions_48ffe56a",
+    "extraction_quality": 0.5
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:24:31.756592",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_48ffe56a",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-24-31-756592_48ffe56a.json"
+  },
+  "extracted_data": {
+    "original_data_id": "traffic_conditions_48ffe56a",
+    "source_type": "traffic_conditions",
+    "extracted_timestamp": "2026-02-07T19:40:34.811223",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "Central to South",
+        "context": "traffic_route"
+      },
+      {
+        "type": "location",
+        "name": "Trafalgar Square, London",
+        "context": "origin_point"
+      },
+      {
+        "type": "location",
+        "name": "Clapham Common, London",
+        "context": "destination_point"
+      }
+    ],
+    "structured_fields": {
+      "route_name": "Central to South",
+      "origin": "Trafalgar Square, London",
+      "destination": "Clapham Common, London",
+      "status": "pending_browser_automation",
+      "duration": null,
+      "distance": null,
+      "event_type": "traffic_observation"
+    },
+    "confidence_adjustment": -0.2,
+    "uncertainty": 0.3999999999999999,
+    "normalized_timestamp": "2026-02-07T19:24:09.751794",
+    "language": "en",
+    "extraction_quality": 0.5
+  }
+}

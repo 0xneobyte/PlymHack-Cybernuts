@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T01:50:14.101262",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-222",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\01-50-14-128090_TIMS-222.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T01:50:14.101262",
+    "road_id": "a24",
+    "road_name": "a24",
+    "disruption_id": "TIMS-222286",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A24] TOOTING HIGH STREET (SW17 ) (Wandsworth)",
+    "comments": "[A24] Tooting High Street (Both directions) at the junction of Trevelyan Road - Contraflow in place at this location as part of Thames Water (new connection) major scheme works. These works are taking place at multiple locations along the A24 in Tooting and Balham, with various restrictions in place. ",
+    "current_update": "Delays are possible. ",
+    "start_time": "2026-01-12T07:00:00Z",
+    "end_time": "2026-03-13T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.171515,
+        51.424345
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

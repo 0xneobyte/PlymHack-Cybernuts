@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T02:50:55.718621",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-217",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\02-50-55-744764_TIMS-217.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T02:50:55.718621",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-217965",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A4] PALL MALL (SW1A ,SW1Y ) (Westminster)",
+    "comments": "[A4] Pall Mall (Eastbound) between [A4] Haymarket and [A4] Waterloo Place - Road closed to facilitate utility works.",
+    "current_update": "Use an alternative route. Delays are possible on diversion.",
+    "start_time": "2026-01-27T08:00:00Z",
+    "end_time": "2026-02-09T18:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.131703,
+        51.507524
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

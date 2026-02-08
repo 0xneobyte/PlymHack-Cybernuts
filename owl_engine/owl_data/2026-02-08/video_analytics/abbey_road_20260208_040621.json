@@ -1,0 +1,79 @@
+{
+  "session_start": "2026-02-08T04:06:21.298539",
+  "timestamp": "2026-02-08T04:06:21.298539",
+  "hourly_stats": {
+    "hour": "2026-02-08_04:00",
+    "timestamp": "2026-02-08T04:06:21.298539",
+    "frame_count": 1,
+    "avg_crowd_density": 1,
+    "vehicle_counts": {
+      "car": {
+        "north": 0,
+        "south": 3,
+        "east": 0,
+        "west": 0
+      },
+      "bus": {
+        "north": 0,
+        "south": 0,
+        "east": 0,
+        "west": 0
+      },
+      "motorcycle": {
+        "north": 0,
+        "south": 0,
+        "east": 0,
+        "west": 0
+      }
+    }
+  },
+  "detections": [
+    {
+      "timestamp": "2026-02-08T04:06:21.298539",
+      "vehicle_count": 3,
+      "person_count": 1,
+      "objects": [
+        {
+          "class": "car",
+          "confidence": 0.7236756086349487,
+          "bbox": [
+            850,
+            376,
+            1168,
+            570
+          ]
+        },
+        {
+          "class": "person",
+          "confidence": 0.6665580868721008,
+          "bbox": [
+            1807,
+            312,
+            1865,
+            465
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.6119766235351562,
+          "bbox": [
+            1397,
+            257,
+            1536,
+            362
+          ]
+        },
+        {
+          "class": "car",
+          "confidence": 0.3467891812324524,
+          "bbox": [
+            1097,
+            276,
+            1515,
+            465
+          ]
+        }
+      ]
+    }
+  ]
+}

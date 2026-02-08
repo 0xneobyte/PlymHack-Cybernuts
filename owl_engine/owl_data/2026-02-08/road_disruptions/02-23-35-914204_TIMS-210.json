@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T02:23:35.903201",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-210",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\02-23-35-914204_TIMS-210.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T02:23:35.903201",
+    "road_id": "a40",
+    "road_name": "a40",
+    "disruption_id": "TIMS-210389",
+    "category": "Works",
+    "sub_category": "TfL works",
+    "severity": 4,
+    "location": "[A40] WESTWAY (W10 ,W12 ) (Hammersmith & Fulham,Kensington & Chelsea)",
+    "comments": "[A40] Westway (Eastbound) at the junction of [A3220] West Cross Route - The exit slip road to the Northern Roundabout is closed to facilitate repair works. ",
+    "current_update": "Use an alternative route. Delays are possible on diversion.",
+    "start_time": "2025-08-27T16:00:00Z",
+    "end_time": "2026-03-31T16:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.221845,
+        51.515699
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T04:54:27.035450",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\04-54-27-047446_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T04:54:27.035450",
+    "road_id": "a23",
+    "road_name": "a23",
+    "disruption_id": "TIMS-223747",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "BRIGHTON ROAD (CR5 ,CR8 ) (Croydon)",
+    "comments": "Brighton Road (Both directions) at the junction of [B2030] Stoats Nest Road - Two way temporary traffic signals to facilitate UKPN works. The cycle lane is also closed. ",
+    "current_update": "Traffic is flowing well.",
+    "start_time": "2026-02-03T10:00:00Z",
+    "end_time": "2026-02-08T23:59:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.132623,
+        51.324737
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

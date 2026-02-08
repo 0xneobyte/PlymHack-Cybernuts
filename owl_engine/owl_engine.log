@@ -1,0 +1,116 @@
+2026-02-07 19:24:40,547 - OWL_ENGINE - INFO -   flood_warnings: 10 records
+2026-02-07 19:24:40,548 - OWL_ENGINE - INFO -   river_levels: 5 records
+2026-02-07 19:24:40,548 - OWL_ENGINE - INFO -   traffic_conditions: 12 records
+2026-02-07 19:34:44,360 - OWL_ENGINE - INFO - 🦉 Initializing Owl Engine - COLLECT Layer
+2026-02-07 19:34:44,361 - JSONDatabase - INFO - 📁 Database initialized at owl_data
+2026-02-07 19:34:44,361 - FloodMonitoring - INFO - ✓ Flood Monitoring Collector initialized
+2026-02-07 19:34:44,361 - MetOffice - WARNING - ⚠ Met Office API key not set. Set MET_OFFICE_API_KEY environment variable.
+2026-02-07 19:34:44,361 - MetOffice - INFO - ✓ Met Office Collector initialized
+2026-02-07 19:34:44,362 - LondonDatastore - INFO - ✓ London Datastore Collector initialized
+2026-02-07 19:34:44,363 - WasteManagement - INFO - ✓ Waste Management Collector initialized
+2026-02-07 19:34:44,363 - TrafficMonitor - INFO - ✓ Traffic Monitor Collector initialized
+2026-02-07 19:34:44,363 - OWL_ENGINE - INFO - ✓ Initialized 5 data collectors
+2026-02-07 19:34:44,363 - OWL_ENGINE - INFO - 🔄 Running single collection cycle...
+2026-02-07 19:34:44,363 - OWL_ENGINE - INFO - 📡 Starting data collection cycle...
+2026-02-07 19:34:44,364 - OWL_ENGINE - INFO -   → Collecting from flood_monitoring...
+2026-02-07 19:34:44,364 - OWL_ENGINE - INFO -   → Collecting from met_office...
+2026-02-07 19:34:44,365 - OWL_ENGINE - INFO -   → Collecting from london_datastore...
+2026-02-07 19:34:44,365 - MetOffice - WARNING - ⚠ Skipping Met Office collection (no API key)
+2026-02-07 19:34:44,365 - OWL_ENGINE - INFO -   → Collecting from waste_management...
+2026-02-07 19:34:44,365 - OWL_ENGINE - INFO -   → Collecting from traffic_monitor...
+2026-02-07 19:34:44,365 - OWL_ENGINE - INFO -   ✓ met_office collection successful
+2026-02-07 19:34:45,502 - JSONDatabase - INFO - ✓ Stored 10/10 records for flood_warnings
+2026-02-07 19:34:47,472 - WasteManagement - INFO - ✓ Waste Management: 0 datasets found
+2026-02-07 19:34:47,472 - OWL_ENGINE - INFO -   ✓ waste_management collection successful
+2026-02-07 19:34:56,644 - LondonDatastore - INFO - ✓ London Datastore: 0 datasets found
+2026-02-07 19:34:56,644 - OWL_ENGINE - INFO -   ✓ london_datastore collection successful
+2026-02-07 19:34:56,829 - JSONDatabase - INFO - ✓ Stored 5/5 records for river_levels
+2026-02-07 19:34:56,829 - FloodMonitoring - INFO - ✓ Flood monitoring: 10 warnings, 5 river readings
+2026-02-07 19:34:56,831 - OWL_ENGINE - INFO -   ✓ flood_monitoring collection successful
+2026-02-07 19:35:08,380 - JSONDatabase - INFO - ✓ Stored 12/12 records for traffic_conditions
+2026-02-07 19:35:08,380 - TrafficMonitor - INFO - ✓ Traffic Monitor: 12 routes collected
+2026-02-07 19:35:08,380 - OWL_ENGINE - INFO -   ✓ traffic_monitor collection successful
+2026-02-07 19:35:08,381 - OWL_ENGINE - INFO - ✓ Collection cycle complete
+2026-02-07 19:35:08,381 - OWL_ENGINE - INFO - ✓ Single collection complete
+2026-02-07 19:36:36,894 - OWL_ENGINE - INFO - 🦉 Initializing Owl Engine - COLLECT Layer
+2026-02-07 19:36:36,895 - JSONDatabase - INFO - 📁 Database initialized at owl_data
+2026-02-07 19:36:36,895 - FloodMonitoring - INFO - ✓ Flood Monitoring Collector initialized
+2026-02-07 19:36:36,895 - MetOffice - WARNING - ⚠ Met Office API key not set. Set MET_OFFICE_API_KEY environment variable.
+2026-02-07 19:36:36,896 - MetOffice - INFO - ✓ Met Office Collector initialized
+2026-02-07 19:36:36,896 - LondonDatastore - INFO - ✓ London Datastore Collector initialized
+2026-02-07 19:36:36,896 - WasteManagement - INFO - ✓ Waste Management Collector initialized
+2026-02-07 19:36:36,897 - TrafficMonitor - INFO - ✓ Traffic Monitor Collector initialized
+2026-02-07 19:36:36,897 - OWL_ENGINE - INFO - ✓ Initialized 5 data collectors
+2026-02-07 19:36:36,897 - OWL_ENGINE - INFO - 📊 Owl Engine Status
+2026-02-07 19:36:36,898 - OWL_ENGINE - INFO -   flood_warnings: 40 records
+2026-02-07 19:36:36,898 - OWL_ENGINE - INFO -   river_levels: 20 records
+2026-02-07 19:36:36,899 - OWL_ENGINE - INFO -   traffic_conditions: 48 records
+2026-02-07 19:38:35,491 - OWL_ENGINE - INFO - 🦉 Initializing Owl Engine - COLLECT Layer
+2026-02-07 19:38:35,491 - JSONDatabase - INFO - 📁 Database initialized at owl_data
+2026-02-07 19:38:35,491 - FloodMonitoring - INFO - ✓ Flood Monitoring Collector initialized
+2026-02-07 19:38:35,491 - MetOffice - WARNING - ⚠ Met Office API key not set. Set MET_OFFICE_API_KEY environment variable.
+2026-02-07 19:38:35,491 - MetOffice - INFO - ✓ Met Office Collector initialized
+2026-02-07 19:38:35,491 - LondonDatastore - INFO - ✓ London Datastore Collector initialized
+2026-02-07 19:38:35,491 - WasteManagement - INFO - ✓ Waste Management Collector initialized
+2026-02-07 19:38:35,491 - TrafficMonitor - INFO - ✓ Traffic Monitor Collector initialized
+2026-02-07 19:38:35,491 - OWL_ENGINE - INFO - ✓ Initialized 5 data collectors
+2026-02-07 19:38:35,491 - OWL_ENGINE - INFO - 🚀 Starting real-time collection mode
+2026-02-07 19:38:35,491 - OWL_ENGINE - INFO - 📡 Starting data collection cycle...
+2026-02-07 19:38:35,491 - OWL_ENGINE - INFO -   → Collecting from flood_monitoring...
+2026-02-07 19:38:35,491 - OWL_ENGINE - INFO -   → Collecting from met_office...
+2026-02-07 19:38:35,494 - MetOffice - WARNING - ⚠ Skipping Met Office collection (no API key)
+2026-02-07 19:38:35,494 - OWL_ENGINE - INFO -   → Collecting from london_datastore...
+2026-02-07 19:38:35,494 - OWL_ENGINE - INFO -   ✓ met_office collection successful
+2026-02-07 19:38:35,494 - OWL_ENGINE - INFO -   → Collecting from waste_management...
+2026-02-07 19:38:35,494 - OWL_ENGINE - INFO -   → Collecting from traffic_monitor...
+2026-02-07 19:38:37,029 - JSONDatabase - INFO - ✓ Stored 10/10 records for flood_warnings
+2026-02-07 19:38:38,859 - WasteManagement - INFO - ✓ Waste Management: 0 datasets found
+2026-02-07 19:38:38,859 - OWL_ENGINE - INFO -   ✓ waste_management collection successful
+2026-02-07 19:38:43,078 - JSONDatabase - INFO - ✓ Stored 5/5 records for river_levels
+2026-02-07 19:38:43,078 - FloodMonitoring - INFO - ✓ Flood monitoring: 10 warnings, 5 river readings
+2026-02-07 19:38:43,078 - OWL_ENGINE - INFO -   ✓ flood_monitoring collection successful
+2026-02-07 19:38:44,467 - LondonDatastore - INFO - ✓ London Datastore: 0 datasets found
+2026-02-07 19:38:44,467 - OWL_ENGINE - INFO -   ✓ london_datastore collection successful
+2026-02-07 19:38:59,542 - JSONDatabase - INFO - ✓ Stored 12/12 records for traffic_conditions
+2026-02-07 19:38:59,542 - TrafficMonitor - INFO - ✓ Traffic Monitor: 12 routes collected
+2026-02-07 19:38:59,542 - OWL_ENGINE - INFO -   ✓ traffic_monitor collection successful
+2026-02-07 20:15:46,221 - OWL_ENGINE - INFO - 🦉 Initializing Owl Engine - COLLECT Layer
+2026-02-07 20:15:46,221 - JSONDatabase - INFO - 📁 Database initialized at owl_data
+2026-02-07 20:15:46,221 - FloodMonitoring - INFO - ✓ Flood Monitoring Collector initialized
+2026-02-07 20:15:46,221 - MetOffice - WARNING - ⚠ Met Office API key not set. Set MET_OFFICE_API_KEY environment variable.
+2026-02-07 20:15:46,221 - MetOffice - INFO - ✓ Met Office Collector initialized
+2026-02-07 20:15:46,221 - LondonDatastore - INFO - ✓ London Datastore Collector initialized
+2026-02-07 20:15:46,221 - WasteManagement - INFO - ✓ Waste Management Collector initialized
+2026-02-07 20:15:46,221 - TrafficMonitor - INFO - ✓ Traffic Monitor Collector initialized
+2026-02-07 20:15:46,221 - OWL_ENGINE - INFO - ✓ Initialized 5 data collectors
+2026-02-07 20:15:46,221 - OWL_ENGINE - INFO - 🚀 Starting real-time collection mode
+2026-02-07 20:15:46,347 - OWL_ENGINE - INFO - 🌐 Web dashboard started at http://localhost:5000
+2026-02-07 20:15:46,347 - OWL_ENGINE - INFO -    Opening in browser...
+2026-02-07 20:15:46,363 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.16.133.118:5000
+2026-02-07 20:15:46,363 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-02-07 20:15:48,446 - OWL_ENGINE - INFO - 📡 Starting data collection cycle...
+2026-02-07 20:15:48,448 - OWL_ENGINE - INFO -   → Collecting from flood_monitoring...
+2026-02-07 20:15:48,448 - OWL_ENGINE - INFO -   → Collecting from met_office...
+2026-02-07 20:15:48,448 - MetOffice - WARNING - ⚠ Skipping Met Office collection (no API key)
+2026-02-07 20:15:48,448 - OWL_ENGINE - INFO -   → Collecting from london_datastore...
+2026-02-07 20:15:48,448 - OWL_ENGINE - INFO -   ✓ met_office collection successful
+2026-02-07 20:15:48,448 - OWL_ENGINE - INFO -   → Collecting from waste_management...
+2026-02-07 20:15:48,448 - OWL_ENGINE - INFO -   → Collecting from traffic_monitor...
+2026-02-07 20:15:48,831 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 20:15:48] "GET / HTTP/1.1" 200 -
+2026-02-07 20:15:49,000 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 20:15:49] "GET /api/stats HTTP/1.1" 200 -
+2026-02-07 20:15:51,974 - WasteManagement - INFO - ✓ Waste Management: 0 datasets found
+2026-02-07 20:15:51,975 - OWL_ENGINE - INFO -   ✓ waste_management collection successful
+2026-02-07 20:15:53,986 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 20:15:53] "GET /api/stats HTTP/1.1" 200 -
+2026-02-07 20:15:59,294 - werkzeug - INFO - 127.0.0.1 - - [07/Feb/2026 20:15:59] "GET /api/stats HTTP/1.1" 200 -
+2026-02-07 20:16:03,460 - JSONDatabase - INFO - ✓ Stored 10/10 records for flood_warnings
+2026-02-07 20:16:05,737 - LondonDatastore - INFO - ✓ London Datastore: 0 datasets found
+2026-02-07 20:16:05,737 - OWL_ENGINE - INFO -   ✓ london_datastore collection successful
+2026-02-07 20:16:12,468 - JSONDatabase - INFO - ✓ Stored 12/12 records for traffic_conditions
+2026-02-07 20:16:12,468 - TrafficMonitor - INFO - ✓ Traffic Monitor: 12 routes collected
+2026-02-07 20:16:12,468 - OWL_ENGINE - INFO -   ✓ traffic_monitor collection successful
+2026-02-07 20:16:29,053 - JSONDatabase - INFO - ✓ Stored 5/5 records for river_levels
+2026-02-07 20:16:29,053 - FloodMonitoring - INFO - ✓ Flood monitoring: 10 warnings, 5 river readings
+2026-02-07 20:16:29,053 - OWL_ENGINE - INFO -   ✓ flood_monitoring collection successful

@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T03:56:48.227950",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-224",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\03-56-48-231965_TIMS-224.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T03:56:48.227950",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-224034",
+    "category": "Network delays",
+    "sub_category": "Heavy traffic",
+    "severity": 3,
+    "location": "[A3031] ALBERT BRIDGE ROAD (SW11 ,SW3 ) (Kensington & Chelsea,Wandsworth)",
+    "comments": "[A3031] Albert Bridge Road (Both directions) at the junction of [A3212] Chelsea Embankment - Traffic delays due to road closures in the area. Buses are diverted via Chelsea Bridge. ",
+    "current_update": "Traffic is slow moving on approach to Battersea bridge. ",
+    "start_time": "2026-02-07T18:59:48Z",
+    "end_time": "2026-02-07T23:59:59Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "High",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.167217,
+        51.48322
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

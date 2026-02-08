@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T20:16:12.456347",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_911d4f71",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\20-16-12-456347_911d4f71.json"
+  },
+  "raw_data": {
+    "route_name": "Central to East",
+    "origin": "Trafalgar Square, London",
+    "destination": "Stratford, London",
+    "maps_url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Stratford%2C%20London/",
+    "collection_timestamp": "2026-02-07T20:15:52.451585",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

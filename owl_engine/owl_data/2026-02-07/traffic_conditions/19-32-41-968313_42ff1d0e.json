@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:32:41.968313",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_42ff1d0e",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-32-41-968313_42ff1d0e.json"
+  },
+  "raw_data": {
+    "route_name": "Central to South",
+    "origin": "Trafalgar Square, London",
+    "destination": "Clapham Common, London",
+    "maps_url": "https://www.google.com/maps/dir/Trafalgar%20Square%2C%20London/Clapham%20Common%2C%20London/",
+    "collection_timestamp": "2026-02-07T19:32:19.962714",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

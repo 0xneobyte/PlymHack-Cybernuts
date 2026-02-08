@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T20:16:03.455453",
+    "source_type": "flood_warnings",
+    "initial_confidence": 0.9,
+    "current_confidence": 0.9,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "flood_warnings_efd1ecde",
+    "file_path": "owl_data\\2026-02-07\\flood_warnings\\20-16-03-455453_efd1ecde.json"
+  },
+  "raw_data": {
+    "@id": "http://environment.data.gov.uk/flood-monitoring/id/floods/061WAB23DitIslnd",
+    "description": "River Thames at Thames Ditton Island",
+    "eaAreaName": "Thames",
+    "eaRegionName": "No longer used",
+    "floodArea": {
+      "@id": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/061WAB23DitIslnd",
+      "county": "Greater London, Richmond upon Thames, Surrey",
+      "notation": "061WAB23DitIslnd",
+      "polygon": "http://environment.data.gov.uk/flood-monitoring/id/floodAreas/061WAB23DitIslnd/polygon",
+      "riverOrSea": "River Thames"
+    },
+    "floodAreaID": "061WAB23DitIslnd",
+    "isTidal": false,
+    "message": "High tides combined with high river flows from upstream may lead to flooding.\n\nThe next high tide is expected at Thames Ditton at 19:00 on 07/02/2026 and is forecast to reach between 5.67m - 5.81m. The following high tide is expected at 07:00 on 08/02/2026 and is forecast to reach between 5.63m - 5.77m. The forecast is for rain overnight and into tomorrow morning. We expect river levels to remain high over the next few days, although we expect tidal peaks to reduce after today.\n\nWe are closely monitoring the situation. \n\nTake care and avoid walking, cycling or driving through flood water. Avoid low lying roads near rivers, which may be flooded.\n\nThis message will be updated by 20:00 07/02/2026 or as the situation changes.\n",
+    "severity": "Flood alert",
+    "severityLevel": 3,
+    "timeMessageChanged": "2026-02-07T09:39:00",
+    "timeRaised": "2026-02-07T09:39:00",
+    "timeSeverityChanged": "2026-01-31T18:53:00"
+  }
+}

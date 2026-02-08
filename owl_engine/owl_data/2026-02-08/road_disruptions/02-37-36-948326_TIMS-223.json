@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T02:37:36.916737",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\02-37-36-948326_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T02:37:36.916737",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-223702",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A107] UPPER CLAPTON ROAD (E5 ) (Hackney)",
+    "comments": "[A107] Upper Clapton Road (Northbound) between [A107] A 107 and Brooke Road - Lane one is closed due to works. Temporary traffic signals are in place between 08:00 Saturday 07 February and 18:00 Sunday 08 February. ",
+    "current_update": "Delays are possible.",
+    "start_time": "2026-02-02T17:05:00Z",
+    "end_time": "2026-02-13T18:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.056373,
+        51.559437
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

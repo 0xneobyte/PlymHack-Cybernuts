@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T00:57:58.641490",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-215",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\00-57-58-686122_TIMS-215.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T00:57:58.641490",
+    "road_id": "Unknown Road",
+    "road_name": "Unknown Road",
+    "disruption_id": "TIMS-215004",
+    "category": "Works",
+    "sub_category": "TfL works",
+    "severity": 4,
+    "location": "DU CANE ROAD (W12 ,W3 ) (Hammersmith & Fulham)",
+    "comments": "Du Cane Road (Both directions) at the junction of Hilary Road - Two-way temporary traffic signals are in operation for bridge works. ",
+    "current_update": "Delays are possible. ",
+    "start_time": "2025-08-26T07:00:00Z",
+    "end_time": "2026-02-27T18:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Low",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.246013,
+        51.515377
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

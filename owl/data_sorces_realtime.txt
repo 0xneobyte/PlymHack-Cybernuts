@@ -1,0 +1,133 @@
+Free APIs & Sources:
+
+Environment Agency Real-Time Flood-Monitoring API (Best for London/UK floods—covers Thames River, common in London).
+Covers: Near-real-time flood warnings/alerts, water levels/flows, rainfall gauges, flood areas.
+Access: Free, no key needed (Open Government Licence).
+Base URL: https://environment.data.gov.uk/flood-monitoring/
+Key Endpoints:
+Flood warnings: GET /id/floodWarnings (filter by county=Greater London).
+River levels: GET /id/stations (search for London stations like "Kingston"); then GET /id/measures/{measureId}/readings.
+Historical: ?date=YYYY-MM-DD param.
+
+Docs: https://environment.data.gov.uk/flood-monitoring/doc/reference.
+Use for signals: High water levels → disaster risk hypothesis (correlate with population data for vulnerable impacts).
+
+UK Met Office DataPoint API (Weather extremes as disaster precursors—e.g., heavy rain leading to floods).
+Covers: Real-time weather observations, forecasts, severe warnings (storms, floods, heatwaves).
+Access: Free API key (register at https://register.metoffice.gov.uk/WaveRegistrationClient/public/register).
+Base URL: http://datapoint.metoffice.gov.uk/public/data/
+Key Endpoints:
+Observations: GET /val/wxobs/all/json/{siteId}?res=hourly&key={your_key} (London sites like Heathrow).
+Severe warnings: GET /txt/wxwarning/uk/json?key={key}.
+Historical: Layered forecasts include past data.
+
+Docs: https://www.metoffice.gov.uk/services/data/datapoint.
+
+London Datastore (GLA) — Open datasets for disaster impacts/vulnerability.
+Covers: Flood risk zones, historical flood events, population in vulnerable areas, economic loss estimates (e.g., from past floods).
+Access: Free CKAN API for search/download (no key); crawl portal for CSVs.
+Portal: https://data.london.gov.uk/
+Key Datasets/APIs:
+Flood risk: Search "London Surface Water Strategy" or "Flood Risk Zones" → GeoJSON/CSV downloads.
+Vulnerability: "Indices of Deprivation" (low-income areas) + "Population Density" CSVs.
+API: https://data.london.gov.uk/api/3/action/package_search?q=flood (JSON results with download links).
+
+Crawling: Scrape dataset pages for updated CSVs (e.g., use BeautifulSoup on https://data.london.gov.uk/dataset?topics=environment&res_geo=Greater+London).
+
+UNDRR Datahub — Global DRR data with London/UK filters.
+Covers: Disaster risk indicators, losses, Sendai-aligned metrics (deaths, economic impacts).
+Access: Free RESTful APIs.
+Base URL: https://data.undrr.org/api (docs on site).
+Key Endpoints: Search for SDG 11.5 indicators (e.g., disaster losses by country/city).
+Docs: https://data.undrr.org/.
+
+British Geological Survey (BGS) — Satellite/earthquake/flood data.
+Covers: Historical disaster maps (e.g., satellite imagery for flood extent).
+Access: Free open data portal; some APIs via GeoServer.
+Portal: https://www.bgs.ac.uk/data/services/ (crawl for WMS/WFS APIs for flood layers).
+
+
+2. SDG 11.9: Implement Policies for Inclusion, Resource Efficiency, and Disaster Risk Reduction (Focus: Integrated Plans, Climate Adaptation, Sendai Framework)
+Data Types Needed:
+
+Policy/plan documents (e.g., London's climate adaptation strategies, DRR frameworks).
+Implementation metrics (e.g., number of adopted plans, progress on Sendai targets like risk assessments).
+Resource efficiency data (e.g., energy use in buildings, water efficiency).
+Inclusion/vulnerability indicators (e.g., policies for poor/disabled in disasters).
+Climate adaptation data (e.g., green infrastructure plans, resilience projects).
+
+Free APIs & Sources:
+
+London Datastore (GLA) — Policy and planning datasets.
+Covers: London's Sustainable Development Commission reports, climate action plans, Sendai-aligned DRR strategies.
+Access: Free CKAN API; crawl for PDFs/CSVs.
+Key Datasets:
+"London SDGs Indicator Data Set" (includes 11.9 metrics like adopted policies).
+"Climate Change Adaptation Strategy" (download PDFs for text extraction → policy signals).
+
+API: https://data.london.gov.uk/api/3/action/package_search?q=climate+adaptation (JSON with links).
+Crawling: Scrape https://data.london.gov.uk/dataset/london-sdgs-indicator-data-set for annex PDFs (use for entity linking: "policy" type events).
+
+UK SDG Data (ONS/UNSD) — National/local DRR policy tracking.
+Covers: Sendai Framework implementation (e.g., number of local governments with DRR strategies).
+Access: Free APIs via UN SDG platform.
+Base URL: https://sdgdata.gov.uk/api (or global https://unstats.un.org/sdgs/dataportal/api).
+Key Endpoints: Indicator 11.b.1/11.b.2 (national DRR strategies); filter for UK/London.
+Docs: https://sdgdata.gov.uk/13-1-2 (for 11.9 ties).
+
+UNDRR Sendai Framework Monitor API — Global Sendai data with UK filters.
+Covers: Progress on Sendai targets (e.g., adopted DRR plans, climate integration).
+Access: Free (login optional for advanced); RESTful endpoints.
+Portal: https://sendaimonitor.undrr.org/ (API docs in platform).
+Use for hypotheses: Low policy adoption score → risk vulnerability signal.
+
+Greater London Authority (GLA) Website — Crawl for policy docs.
+Covers: London's Climate Action Plan, resilience strategies (e.g., flood risk management).
+Access: Public HTML; crawl https://www.london.gov.uk/programmes-strategies/environment-and-climate-change/climate-change/climate-adaptation.
+Crawling: Use BeautifulSoup to extract plan texts/PDFs → ingest as "policy_event" (e.g., NLP for inclusion keywords).
+
+Open SDG Platform — SDG policy tracking.
+Covers: Customizable SDG data, including 11.9 plans.
+Access: Free GitHub-based API (e.g., for UK instances).
+Docs: https://open-sdg.org/ (crawl UK implementations like sdgdata.gov.uk).
+
+
+3. SDG 11.6: Reduce Environmental Impact of Cities (Focus: Waste Management, Noise, Broader Pollution)
+Data Types Needed:
+
+Municipal waste collection/recycling rates, landfill data (for waste management).
+Noise pollution levels (road/rail/airport noise maps).
+Broader environmental impacts (e.g., water quality, energy consumption, urban heat islands).
+Per capita metrics (e.g., waste generated per person).
+
+Free APIs & Sources:
+
+WasteDataFlow API/Data — UK municipal waste reporting.
+Covers: Local authority collected waste (recycling, landfill, incineration) for London boroughs.
+Access: Free portal with CSV downloads; some API-like access.
+Portal: https://www.wastedataflow.org/ (register for data extracts).
+Key: Quarterly reports for England (London included); crawl https://www.data.gov.uk/dataset/waste-data-flow for CSVs.
+Docs: https://www.data.gov.uk/dataset/0e0c12d8-24f6-461f-b4bc-f6d6a5bf2de5/waste-data-flow.
+
+London Datastore — Waste and environmental datasets.
+Covers: Local authority collected waste, recycling rates, noise pollution maps.
+Access: Free CKAN API.
+Key Datasets:
+"Local Authority Collected Waste Management, London" (CSV for recycling/landfill).
+"Fuel Poverty" (energy efficiency proxy).
+"Noise Pollution in London" (maps/CSVs).
+
+API: https://data.london.gov.uk/api/3/action/package_search?q=waste+management.
+Crawling: Scrape dataset pages for updates.
+
+UN-Habitat Waste Wise Cities Tool/Data API — SDG 11.6.1 monitoring.
+Covers: Municipal solid waste collection/management metrics (global, with London/UK data).
+Access: Free online tool/API for data entry/query.
+Portal: https://unh.rwm.global/ (API for submitting/querying city data).
+Docs: https://unhabitat.org/waste-wise-data (includes Data Collection Application).
+
+Defra Environment Data — Broader impacts like noise/water.
+Covers: Noise maps, water quality (rivers/canals in London).
+Access: Free APIs via https://environment.data.gov.uk/.
+Key: Bathing water API: GET /def/bathing-water (for Thames water quality).
+Crawling: https://environment.data.gov.uk/noise/ for noise data.

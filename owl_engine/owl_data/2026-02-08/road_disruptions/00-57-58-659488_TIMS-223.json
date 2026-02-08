@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-08T00:57:58.640489",
+    "source_type": "road_disruptions",
+    "initial_confidence": 0.95,
+    "current_confidence": 0.95,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "road_disruption_TIMS-223",
+    "file_path": "C:\\Users\\zenit\\OneDrive\\Documents\\GitHub\\PLYMHACK\\owl_engine\\owl_data\\2026-02-08\\road_disruptions\\00-57-58-659488_TIMS-223.json"
+  },
+  "raw_data": {
+    "timestamp": "2026-02-08T00:57:58.640489",
+    "road_id": "a41",
+    "road_name": "a41",
+    "disruption_id": "TIMS-223693",
+    "category": "Works",
+    "sub_category": "Utility works",
+    "severity": 4,
+    "location": "[A41] FINCHLEY ROAD (NW3 ) (Camden)",
+    "comments": "[A41] Finchley Road (Southbound) at the junction of Arkwright Road - Lanes one and two of three are closed due to Thames Water works. ",
+    "current_update": "Delays are possible.",
+    "start_time": "2026-02-02T15:19:00Z",
+    "end_time": "2026-02-13T18:00:00Z",
+    "status": "Active",
+    "has_closures": false,
+    "level_of_interest": "Medium",
+    "geography": {
+      "type": "Point",
+      "coordinates": [
+        -0.183632,
+        51.550807
+      ],
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4326"
+        }
+      }
+    },
+    "impact_areas": [],
+    "source": "TfL Road Disruptions API",
+    "confidence": 0.95
+  }
+}

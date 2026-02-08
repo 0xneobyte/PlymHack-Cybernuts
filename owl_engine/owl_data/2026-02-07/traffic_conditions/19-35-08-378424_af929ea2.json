@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-07T19:35:08.378424",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_af929ea2",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-35-08-378424_af929ea2.json"
+  },
+  "raw_data": {
+    "route_name": "A1 North",
+    "origin": "City of London",
+    "destination": "Barnet, London",
+    "maps_url": "https://www.google.com/maps/dir/City%20of%20London/Barnet%2C%20London/",
+    "collection_timestamp": "2026-02-07T19:35:00.370690",
+    "status": "pending_browser_automation",
+    "note": "Browser automation needed to extract traffic data"
+  }
+}

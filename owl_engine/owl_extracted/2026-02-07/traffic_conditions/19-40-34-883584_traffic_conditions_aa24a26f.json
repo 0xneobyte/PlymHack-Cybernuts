@@ -1,0 +1,55 @@
+{
+  "extraction_metadata": {
+    "extracted_at": "2026-02-07T19:40:34.882081",
+    "extraction_layer": "EXTRACT",
+    "original_file": "owl_data\\2026-02-07\\traffic_conditions\\19-38-59-540602_aa24a26f.json",
+    "original_data_id": "traffic_conditions_aa24a26f",
+    "extraction_quality": 0.5
+  },
+  "original_metadata": {
+    "timestamp": "2026-02-07T19:38:59.540602",
+    "source_type": "traffic_conditions",
+    "initial_confidence": 0.8,
+    "current_confidence": 0.8,
+    "decay_applied": false,
+    "ingestion_layer": "COLLECT",
+    "data_id": "traffic_conditions_aa24a26f",
+    "file_path": "owl_data\\2026-02-07\\traffic_conditions\\19-38-59-540602_aa24a26f.json"
+  },
+  "extracted_data": {
+    "original_data_id": "traffic_conditions_aa24a26f",
+    "source_type": "traffic_conditions",
+    "extracted_timestamp": "2026-02-07T19:40:34.882081",
+    "entities_mentioned": [
+      {
+        "type": "infrastructure",
+        "name": "A4 West",
+        "context": "traffic_route"
+      },
+      {
+        "type": "location",
+        "name": "Kensington, London",
+        "context": "origin_point"
+      },
+      {
+        "type": "location",
+        "name": "Heathrow Airport",
+        "context": "destination_point"
+      }
+    ],
+    "structured_fields": {
+      "route_name": "A4 West",
+      "origin": "Kensington, London",
+      "destination": "Heathrow Airport",
+      "status": "pending_browser_automation",
+      "duration": null,
+      "distance": null,
+      "event_type": "traffic_observation"
+    },
+    "confidence_adjustment": -0.2,
+    "uncertainty": 0.3999999999999999,
+    "normalized_timestamp": "2026-02-07T19:38:55.532948",
+    "language": "en",
+    "extraction_quality": 0.5
+  }
+}
