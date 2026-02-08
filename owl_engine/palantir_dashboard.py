@@ -1069,8 +1069,8 @@ def main():
         st.markdown("---")
         
         # Tabs for different correlation views
-        tab1, tab2, tab3, tab4 = st.tabs([
-            "Correlation Engine", "Flood-Traffic Analysis", "Compound Threats", "Network Graph"
+        tab1, tab2, tab3, tab4, tab5 = st.tabs([
+            "Correlation Engine", "Flood-Traffic Analysis", "Compound Threats", "Network Graph", "Event Causality & Scenarios"
         ])
         
         # ========== TAB 1: Correlation Engine Architecture ==========
@@ -1425,6 +1425,383 @@ def main():
                     st.warning("Not enough data to build network graph")
             else:
                 st.info("No correlations available for network visualization")
+        
+        # ========== TAB 5: Event Causality & Scenarios ==========
+        with tab5:
+            st.markdown("#### Event Causality Analysis & Scenario Builder")
+            st.markdown("*Understanding what events cause what - building causal chains and threat scenarios*")
+            
+            if intel['all_events'] or intel['correlations']:
+                
+                # Sub-tabs for different causality views
+                causality_tab1, causality_tab2, causality_tab3, causality_tab4 = st.tabs([
+                    "Causal Flow (Sankey)", "Timeline Cascade", "Scenario Stories", "Causality Matrix"
+                ])
+                
+                # ========== CAUSALITY TAB 1: Sankey Diagram ==========
+                with causality_tab1:
+                    st.markdown("**Event Causality Flow Diagram**")
+                    st.markdown("*Shows how events trigger other events - thickness indicates correlation strength*")
+                    
+                    if intel['correlations']:
+                        # Build Sankey data from correlations
+                        # Source = Cause, Target = Effect (based on time lag)
+                        sankey_sources = []
+                        sankey_targets = []
+                        sankey_values = []
+                        sankey_colors = []
+                        
+                        # Create node labels
+                        all_nodes = []
+                        node_labels = []
+                        
+                        for i, corr in enumerate(intel['correlations'][:15]):  # Top 15 correlations
+                            lag_hours = corr.get('lag_hours', 0)
+                            score = corr.get('combined_score', 0)
+                            
+                            # Determine causality based on time lag
+                            if lag_hours > 0:
+                                # Flood happened first -> caused traffic
+                                cause = f"Flood: {corr.get('flood_area', 'Unknown')[:25]}"
+                                effect = f"Traffic: {corr.get('traffic_route', 'Unknown')[:25]}"
+                                inference = corr.get('inference', '')
+                                
+                                # Add to nodes if not exists
+                                if cause not in all_nodes:
+                                    all_nodes.append(cause)
+                                    node_labels.append(cause)
+                                if effect not in all_nodes:
+                                    all_nodes.append(effect)
+                                    node_labels.append(effect)
+                                
+                                cause_idx = all_nodes.index(cause)
+                                effect_idx = all_nodes.index(effect)
+                                
+                                sankey_sources.append(cause_idx)
+                                sankey_targets.append(effect_idx)
+                                sankey_values.append(score * 100)  # Scale for visibility
+                                
+                                # Color based on inference strength
+                                if 'HIGH' in inference:
+                                    sankey_colors.append('rgba(231, 76, 60, 0.6)')  # Red for high causality
+                                elif 'MODERATE' in inference:
+                                    sankey_colors.append('rgba(243, 156, 18, 0.6)')  # Orange
+                                else:
+                                    sankey_colors.append('rgba(52, 152, 219, 0.4)')  # Blue for low
+                        
+                        if sankey_sources:
+                            # Create Sankey diagram
+                            fig = go.Figure(data=[go.Sankey(
+                                node=dict(
+                                    pad=15,
+                                    thickness=20,
+                                    line=dict(color='white', width=0.5),
+                                    label=node_labels,
+                                    color=['#3498db' if 'Flood' in label else '#e74c3c' for label in node_labels]
+                                ),
+                                link=dict(
+                                    source=sankey_sources,
+                                    target=sankey_targets,
+                                    value=sankey_values,
+                                    color=sankey_colors
+                                )
+                            )])
+                            
+                            fig.update_layout(
+                                title="Causal Event Flow: What Causes What",
+                                font=dict(size=10),
+                                height=600
+                            )
+                            
+                            st.plotly_chart(fig, use_container_width=True)
+                            
+                            st.markdown("""
+                            **How to Read:**
+                            - **Left side**: Causative events (floods)
+                            - **Right side**: Resulting events (traffic delays)
+                            - **Flow width**: Strength of causal relationship
+                            - **Color**: Red = HIGH causality, Orange = MODERATE, Blue = LOW
+                            """)
+                        else:
+                            st.info("No clear causal relationships detected (all events are concurrent)")
+                    else:
+                        st.info("No correlations available for causal flow analysis")
+                
+                # ========== CAUSALITY TAB 2: Timeline Cascade ==========
+                with causality_tab2:
+                    st.markdown("**Timeline Cascade Visualization**")
+                    st.markdown("*Chronological view showing when events happen and what they trigger*")
+                    
+                    if intel['correlations']:
+                        # Build timeline cascade
+                        cascade_events = []
+                        
+                        for corr in intel['correlations'][:20]:
+                            lag_hours = corr.get('lag_hours', 0)
+                            
+                            if lag_hours != 0:  # Only show events with time separation
+                                # Get timestamps (approximate)
+                                flood_time = 0  # Base time
+                                traffic_time = lag_hours
+                                
+                                cascade_events.append({
+                                    'event': f"Flood in {corr.get('flood_area', 'Unknown')}",
+                                    'time': flood_time,
+                                    'type': 'Flood',
+                                    'severity': corr.get('flood_severity', 0.5)
+                                })
+                                
+                                cascade_events.append({
+                                    'event': f"Traffic delay on {corr.get('traffic_route', 'Unknown')}",
+                                    'time': traffic_time,
+                                    'type': 'Traffic',
+                                    'severity': corr.get('traffic_severity', 0.5),
+                                    'caused_by': f"Flood in {corr.get('flood_area', 'Unknown')}"
+                                })
+                        
+                        if cascade_events:
+                            # Sort by time
+                            cascade_events.sort(key=lambda x: x['time'])
+                            
+                            # Create cascade visualization
+                            cascade_df = pd.DataFrame(cascade_events)
+                            
+                            fig = go.Figure()
+                            
+                            # Add events as scatter points
+                            for event_type in ['Flood', 'Traffic']:
+                                type_events = cascade_df[cascade_df['type'] == event_type]
+                                
+                                fig.add_trace(go.Scatter(
+                                    x=type_events['time'],
+                                    y=type_events['event'],
+                                    mode='markers+text',
+                                    name=event_type,
+                                    marker=dict(
+                                        size=15,
+                                        color='#3498db' if event_type == 'Flood' else '#e74c3c',
+                                        line=dict(width=2, color='white')
+                                    ),
+                                    text=[f"{t}h" for t in type_events['time']],
+                                    textposition="top center"
+                                ))
+                            
+                            # Add causality arrows
+                            for _, event in cascade_df.iterrows():
+                                if 'caused_by' in event:
+                                    cause_event = cascade_df[cascade_df['event'] == event['caused_by']]
+                                    if not cause_event.empty:
+                                        fig.add_annotation(
+                                            x=event['time'],
+                                            y=event['event'],
+                                            ax=cause_event.iloc[0]['time'],
+                                            ay=cause_event.iloc[0]['event'],
+                                            xref='x',
+                                            yref='y',
+                                            axref='x',
+                                            ayref='y',
+                                            showarrow=True,
+                                            arrowhead=2,
+                                            arrowsize=1,
+                                            arrowwidth=2,
+                                            arrowcolor='#95a5a6'
+                                        )
+                            
+                            fig.update_layout(
+                                title="Event Cascade Timeline (Time-Ordered Causality)",
+                                xaxis_title="Time Offset (hours)",
+                                yaxis_title="Events",
+                                height=600,
+                                showlegend=True,
+                                hovermode='closest'
+                            )
+                            
+                            st.plotly_chart(fig, use_container_width=True)
+                            
+                            st.markdown("""
+                            **Reading the Cascade:**
+                            - **Blue dots**: Flood events (causes)
+                            - **Red dots**: Traffic delays (effects)
+                            - **Gray arrows**: Causal relationships
+                            - **X-axis**: Time progression (hours after initial event)
+                            """)
+                        else:
+                            st.info("No time-separated events found for cascade visualization")
+                    else:
+                        st.info("No correlations available")
+                
+                # ========== CAUSALITY TAB 3: Scenario Stories ==========
+                with causality_tab3:
+                    st.markdown("**Threat Scenarios & Event Stories**")
+                    st.markdown("*Narrative descriptions of how events unfolded and impacted each other*")
+                    
+                    # Build scenarios from correlations and compound threats
+                    scenarios = []
+                    
+                    # Scenario 1: High-confidence causal chains
+                    if intel['correlations']:
+                        high_conf_corrs = [c for c in intel['correlations'] if c.get('combined_score', 0) > 0.6]
+                        
+                        if high_conf_corrs:
+                            scenario_events = []
+                            for corr in high_conf_corrs[:5]:
+                                lag = corr.get('lag_hours', 0)
+                                if lag > 0:
+                                    scenario_events.append({
+                                        'time': f"{abs(lag)} hours delay",
+                                        'cause': f"Flood in {corr.get('flood_area', 'area')}",
+                                        'effect': f"Traffic delays on {corr.get('traffic_route', 'route')}",
+                                        'confidence': corr.get('combined_score', 0),
+                                        'description': corr.get('inference', '')
+                                    })
+                            
+                            if scenario_events:
+                                scenarios.append({
+                                    'title': 'Flood-Induced Traffic Disruption Chain',
+                                    'category': 'Environmental → Infrastructure',
+                                    'severity': 'HIGH',
+                                    'events': scenario_events
+                                })
+                    
+                    # Scenario 2: Compound threats as scenarios
+                    if intel['compound_threats']:
+                        for threat in intel['compound_threats'][:3]:
+                            scenarios.append({
+                                'title': threat.get('category', 'Unknown Threat'),
+                                'category': f"Multi-Domain ({', '.join(threat.get('domains_involved', []))})",
+                                'severity': threat.get('severity', 'MEDIUM'),
+                                'description': threat.get('description', ''),
+                                'location': threat.get('location', 'Unknown'),
+                                'event_count': threat.get('event_count', 0)
+                            })
+                    
+                    # Display scenarios
+                    if scenarios:
+                        for i, scenario in enumerate(scenarios, 1):
+                            severity = scenario.get('severity', 'MEDIUM')
+                            
+                            if severity == 'CRITICAL' or severity == 'HIGH':
+                                bg_color = '#8b0000'
+                                icon = '🔴'
+                            elif severity == 'MEDIUM':
+                                bg_color = '#cc6600'
+                                icon = '🟠'
+                            else:
+                                bg_color = '#2c3e50'
+                                icon = '🔵'
+                            
+                            st.markdown(f"""
+                            <div style='background: {bg_color}; padding: 20px; border-radius: 10px; margin: 15px 0; color: white; border-left: 5px solid white;'>
+                                <h3 style='margin: 0; color: white;'>{icon} Scenario {i}: {scenario['title']}</h3>
+                                <p style='margin: 5px 0; opacity: 0.9;'><strong>Category:</strong> {scenario['category']}</p>
+                                <p style='margin: 10px 0; font-size: 16px; line-height: 1.6;'>{scenario.get('description', '')}</p>
+                            """, unsafe_allow_html=True)
+                            
+                            # If scenario has event chain, display it
+                            if 'events' in scenario:
+                                st.markdown("<p style='margin: 10px 0; color: white;'><strong>Event Chain:</strong></p>", unsafe_allow_html=True)
+                                for j, event in enumerate(scenario['events'], 1):
+                                    st.markdown(f"""
+                                    <div style='margin-left: 20px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; margin-bottom: 5px;'>
+                                        <p style='margin: 0; color: white;'><strong>Step {j}:</strong> {event['cause']}</p>
+                                        <p style='margin: 5px 0 0 0; color: white;'>→ <em>{event['time']}</em> → {event['effect']}</p>
+                                        <p style='margin: 5px 0 0 0; font-size: 12px; color: #ecf0f1;'>Confidence: {event['confidence']:.2f} | {event['description']}</p>
+                                    </div>
+                                    """, unsafe_allow_html=True)
+                            
+                            st.markdown("</div>", unsafe_allow_html=True)
+                    else:
+                        st.info("No significant scenarios detected yet. Scenarios will appear when multiple correlated events are identified.")
+                
+                # ========== CAUSALITY TAB 4: Causality Matrix ==========
+                with causality_tab4:
+                    st.markdown("**Causality Matrix**")
+                    st.markdown("*Shows which event types cause which other event types*")
+                    
+                    if intel['all_events'] and intel['correlations']:
+                        # Build causality matrix
+                        # Rows = Causes, Columns = Effects
+                        
+                        event_types = list(set([e.get('domain', 'unknown') for e in intel['all_events']]))
+                        
+                        # Initialize matrix
+                        causality_matrix = pd.DataFrame(0, index=event_types, columns=event_types)
+                        
+                        # PopulateMatrix based on correlations with time lag
+                        for corr in intel['correlations']:
+                            lag = corr.get('lag_hours', 0)
+                            
+                            if lag > 0:  # Flood caused traffic
+                                causality_matrix.loc['flood', 'traffic'] += corr.get('combined_score', 0)
+                            elif lag < 0:  # Traffic happened before flood (rare but possible)
+                                causality_matrix.loc['traffic', 'flood'] += corr.get('combined_score', 0)
+                        
+                        # Normalize by sum for percentages
+                        total_causality = causality_matrix.sum().sum()
+                        if total_causality > 0:
+                            causality_matrix_pct = (causality_matrix / total_causality * 100).round(1)
+                            
+                            # Create heatmap
+                            fig = px.imshow(
+                                causality_matrix_pct,
+                                labels=dict(x="Effect (Result)", y="Cause (Trigger)", color="Causality %"),
+                                x=causality_matrix_pct.columns,
+                                y=causality_matrix_pct.index,
+                                color_continuous_scale='Reds',
+                                title="Causality Matrix: What Causes What"
+                            )
+                            
+                            fig.update_layout(height=500)
+                            st.plotly_chart(fig, use_container_width=True)
+                            
+                            st.markdown("""
+                            **How to Read:**
+                            - **Rows (Y-axis)**: Causative event types (what triggers)
+                            - **Columns (X-axis)**: Effect event types (what results)
+                            - **Color intensity**: Strength of causal relationship
+                            - **Numbers**: Percentage of total causality
+                            
+                            **Example:** If "flood" row shows high value in "traffic" column, 
+                            it means floods frequently cause traffic delays.
+                            """)
+                            
+                            # Summary statistics
+                            st.markdown("**Key Causal Relationships:**")
+                            
+                            # Find strongest relationships
+                            causal_pairs = []
+                            for cause in causality_matrix.index:
+                                for effect in causality_matrix.columns:
+                                    if cause != effect and causality_matrix.loc[cause, effect] > 0:
+                                        causal_pairs.append({
+                                            'Cause': cause.capitalize(),
+                                            'Effect': effect.capitalize(),
+                                            'Strength': causality_matrix.loc[cause, effect],
+                                            'Percentage': causality_matrix_pct.loc[cause, effect]
+                                        })
+                            
+                            if causal_pairs:
+                                causal_df = pd.DataFrame(causal_pairs).sort_values('Strength', ascending=False)
+                                st.dataframe(causal_df, use_container_width=True)
+                            else:
+                                st.info("No causal relationships detected yet")
+                        else:
+                            st.info("No quantified causal relationships available")
+                    else:
+                        st.info("Need both events and correlations to build causality matrix")
+            
+            else:
+                st.info("""
+                **Event Causality Analysis**
+                
+                This section will show:
+                - Causal flow diagrams (what causes what)
+                - Timeline cascades (chronological event triggering)
+                - Threat scenarios (narrative event stories)
+                - Causality matrix (systematic cause-effect relationships)
+                
+                Start collecting data to see causality analysis!
+                """)
         
         return
     
